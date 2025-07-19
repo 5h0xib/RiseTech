@@ -4,14 +4,14 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Contact - Company Bootstrap Template</title>
+  <title>Service Details</title>
   <meta name="description" content="">
   <meta name="keywords" content="">
 
   <!-- Favicons -->
   <link href="assets/img/xicon.png" rel="icon">
   <link href="assets/img/xicon.png" rel="apple-touch-icon">
-
+  
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
@@ -31,10 +31,10 @@
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.3/angular.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.3/angular-route.min.js"></script>
   <script src="./assets/js/app.js"></script>
- 
+
 </head>
 
-<body class="contact-page">
+<body class="service-details-page">
 
   <header id="header" class="header d-flex align-items-center sticky-top">
     <div class="container position-relative d-flex align-items-center">
@@ -48,7 +48,7 @@
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About</a></li>
-          <li class="dropdown"><a href="services.html"><span>Services</span>
+          <li class="dropdown"><a href="services.html" class="active"><span>Services</span>
             <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
               <li class="dropdown"><a href="services.html">
@@ -163,7 +163,7 @@
               </li>
             </ul>
           </li>
-           <li><a href="contact.html" class="active">Contact</a></li>
+           <li><a href="contact.html">Contact</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
@@ -175,93 +175,138 @@
     <!-- Page Title -->
     <div class="page-title accent-background">
       <div class="container d-lg-flex justify-content-between align-items-center">
-        <h1 class="mb-2 mb-lg-0">Contact</h1>
+        <h1 class="mb-2 mb-lg-0">Cloud Services</h1>
         <nav class="breadcrumbs">
           <ol>
-            <li><a href="index.html">Home</a></li>
-            <li class="current">Contact</li>
+            <li><a href="services.html">Services</a></li>
+            <li class="current">Cloud Services</li>
           </ol>
         </nav>
       </div>
     </div><!-- End Page Title -->
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact section">
+    <!-- Service Details Section -->
+    <section id="service-details" class="service-details section">
 
-      <div class="mb-5">
-        <iframe style="width: 100%; height: 400px;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3610.1786541102833!2d55.271801475163464!3d25.197196977710924!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f43348a67e24b%3A0xff45e502e1ceb7e2!2sBurj%20Khalifa!5e0!3m2!1sen!2sin!4v1748031947543!5m2!1sen!2sin" frameborder="0" allowfullscreen=""></iframe>
-      </div><!-- End Google Maps -->
+      <div class="container">
 
-      <div class="container" data-aos="fade">
+        <div class="row gy-4">
 
-        <div class="row gy-5 gx-lg-5">
+          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+            <div id="sticky-content">
+              <div class="services-list">
+                <a style="border-radius: 3px;" href="#" class="active">Cloud Migration</a>
+                <a style="border-radius: 3px;" href="cloud-modernization.html">Cloud Modernization</a>
+                <a style="border-radius: 3px;" href="cloud-app-dev.html">Cloud Application Development</a>
+              </div>
 
-          <div class="col-lg-4">
+              <h4>Cloud Migration</h4>
+              <p>Cloud migration has now become a top priority for organizations that are aiming to take their business operations online, ensuring greater flexibility, scalability, and efficiency in the digital landscape.</p>
+            
+              <div id="top-form" class="col-lg-100 d-flex align-items-center justify-content-center" data-aos="fade-up" data-aos-delay="200">
+                <form style="margin-top: 20px; padding: 20px; box-shadow: rgba(0, 0, 0, 0.13) 0px 0px 10px; border-radius: 10px; width: 90%;" action="https://api.web3forms.com/submit" method="post" class="align-items-center">
+                  <input type="hidden" name="access_key" value="_________">
+                  <input type="hidden" name="redirect" value="_______">
+                  <input type="hidden" name="subject" value="Cloud Migration Service request">
 
-            <div class="info">
-              <h3>Get in touch</h3>
-              <p>Contact us by filling the form or using our contact details below</p>
+                  <p class="text-center" style="font-size: 18px;">Get in touch for more info</p>
 
-              <div class="info-item d-flex">
-                <i class="bi bi-geo-alt flex-shrink-0"></i>
-                <div>
-                  <h4>Location:</h4>
-                  <p>Burj Khalifa, dubai , UAE</p>
-                </div>
-              </div><!-- End Info Item -->
-
-              <div class="info-item d-flex">
-                <i class="bi bi-envelope flex-shrink-0"></i>
-                <div>
-                  <h4>Email:</h4>
-                  <p>sales@risetechglobal.com</p>
-                </div>
-              </div><!-- End Info Item -->
-
-              <div class="info-item d-flex">
-                <i class="bi bi-phone flex-shrink-0"></i>
-                <div>
-                  <h4>Call:</h4>
-                  <p>+91 77570 60229</p>
-                </div>
-              </div><!-- End Info Item -->
+                  <input type="text" placeholder="Name" class="form-control mb-3">
+                  <input type="text" placeholder="Email" class="form-control mb-3">
+                  <input type="tel" placeholder="Phone" class="form-control mb-3">
+                  <button type="submit" class="btn btn-primary" style="background-color: var(--accent-color);">Get a Quote</button>
+                </form>
+              </div>
 
             </div>
+          </div>
+
+          <div class="col-lg-8" data-aos="fade-up" data-aos-delay="200">
+            <h3>We Specialize in Cloud Deployment</h3>
+            <p>
+              Our Cloud Deployment services help businesses seamlessly migrate, deploy, and manage their applications in the cloud. Whether you're adopting a public, private, or hybrid cloud strategy, we ensure a smooth transition with minimal disruption to your operations.
+            </p>
+            <div class="row gy-4 align-items-center" style="margin: 5px;">
+
+              <div class="col-lg-8">
+                <img class="img-fluid rounded-3" data-aos="fade-left" src="assets/img/services/cloud1.png" alt="Cloud Migration Services">
+              </div>
+
+              <ul class="col-lg-4">
+                <h2>Need for Service</h2>
+                <li><i data-aos="fade-right" data-aos-delay="000" class="bi bi-check2-circle"></i> <span data-aos="fade-left" data-aos-delay="100">Migrate data centers to cloud infrastructure</span></li>
+                <li><i data-aos="fade-right" data-aos-delay="100" class="bi bi-check2-circle"></i> <span data-aos="fade-left" data-aos-delay="200">Operate with cost-effective efficiency</span></li>
+                <li><i data-aos="fade-right" data-aos-delay="200" class="bi bi-check2-circle"></i> <span data-aos="fade-left" data-aos-delay="300">Seamlessly enhance organizational collaboration</span></li>
+                <li><i data-aos="fade-right" data-aos-delay="300" class="bi bi-check2-circle"></i> <span data-aos="fade-left" data-aos-delay="400">Reduce on-premise hardware costs</span></li>
+                <li><i data-aos="fade-right" data-aos-delay="400" class="bi bi-check2-circle"></i> <span data-aos="fade-left" data-aos-delay="500">Boost performance and drive business growth</span></li>
+                <li><i data-aos="fade-right" data-aos-delay="500" class="bi bi-check2-circle"></i> <span data-aos="fade-left" data-aos-delay="600">Access scalable storage and unlimited bandwidth</span></li>
+                <li><i data-aos="fade-right" data-aos-delay="600" class="bi bi-check2-circle"></i> <span data-aos="fade-left" data-aos-delay="700">Gain operational flexibility, scalability, and continuity</span></li>
+                <li><i data-aos="fade-right" data-aos-delay="700" class="bi bi-check2-circle"></i> <span data-aos="fade-left" data-aos-delay="800">Eliminate manual installations and maintenance</span></li>
+                <li><i data-aos="fade-right" data-aos-delay="800" class="bi bi-check2-circle"></i> <span data-aos="fade-left" data-aos-delay="900">Empower global remote teams without delays</span></li>
+              </ul>
+            </div>
+
+            <p data-aos="fade-up">
+              Migrate to the cloud for cost savings, operational efficiency, and seamless collaboration. Gain scalability, eliminate hardware hassles, empower global teams, and drive business growth.
+            </p>
+          
+            <div class="row gy-4 align-items-center"  style="margin: 5px; margin-top: 20px;">
+              <ul class="col-lg-4">
+                <h2>Benefits</h2>
+                <li><i data-aos="fade-right" data-aos-delay="000" class="bi bi-check2-circle"></i> <span data-aos="fade-left" data-aos-delay="100">Hassle-free migration from on-premise to cloud</span></li>
+                <li><i data-aos="fade-right" data-aos-delay="100" class="bi bi-check2-circle"></i> <span data-aos="fade-left" data-aos-delay="200">Highly scalable and reliable cloud infrastructure</span></li>
+                <li><i data-aos="fade-right" data-aos-delay="200" class="bi bi-check2-circle"></i> <span data-aos="fade-left" data-aos-delay="300">Access premium tools & services for seamless migration</span></li>
+                <li><i data-aos="fade-right" data-aos-delay="300" class="bi bi-check2-circle"></i> <span data-aos="fade-left" data-aos-delay="400">Cost-efficient pay-per-use cloud model</span></li>
+                <li><i data-aos="fade-right" data-aos-delay="400" class="bi bi-check2-circle"></i> <span data-aos="fade-left" data-aos-delay="500">Scale resources up or down based on demand</span></li>
+                <li><i data-aos="fade-right" data-aos-delay="500" class="bi bi-check2-circle"></i> <span data-aos="fade-left" data-aos-delay="600">Pay only for what you need—maximize ROI</span></li>
+                <li><i data-aos="fade-right" data-aos-delay="600" class="bi bi-check2-circle"></i> <span data-aos="fade-left" data-aos-delay="700">Enhanced team collaboration with shared file access</span></li>
+                <li><i data-aos="fade-right" data-aos-delay="700" class="bi bi-check2-circle"></i> <span data-aos="fade-left" data-aos-delay="800">Automated backups & disaster recovery—no physical setup</span></li>
+              </ul>
+              <div class="col-lg-8">
+                <img class="img-fluid rounded-3" data-aos="fade-right" src="assets/img/services/cloud2.png" alt="Cloud Deployment Services">
+              </div>
+            </div>
+
+            <p data-aos="fade-up">
+              Seamless Migration to scalable, cost-efficient cloud infrastructure. Enjoy pay-as-you-go pricing, effortless scaling, enhanced collaboration, and automated backups—all while maximizing ROI and minimizing IT hassles.
+            </p>
 
           </div>
 
-          <div class="col-lg-8">
-            <form action="https://api.web3forms.com/submit" method="post" class="php-email-form">
-              <input type="hidden" name="access_key" value="66b058d6-2a27-41db-bd33-c2e12aee64dc">
-              <input type="hidden" name="redirect" value="https://woxflow.in/success.html">
-              <input type="hidden" name="form_subject" value="Website Contact Form Submission">
-              <input type="hidden" name="title" value="Website Contact Form">
-
-              <div class="row">
-                <div class="col-md-6 form-group">
-                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required="">
-                </div>
-                <div class="col-md-6 form-group mt-3 mt-md-0">
-                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required="">
-                </div>
-              </div>
-              <div class="form-group mt-3">
-                <input type="number" class="form-control" name="phone" id="phone" placeholder="Your Phone number" required="">
-              </div>
-              <div class="form-group mt-3">
-                <textarea class="form-control" name="message" placeholder="Message" required=""></textarea>
-              </div>
-              <div class="text-center"><button type="submit">Send Message</button></div>
-            </form>
-          </div><!-- End Contact Form -->
 
         </div>
 
       </div>
 
-    </section><!-- /Contact Section -->
+    </section><!-- /Service Details Section -->
+    <style>
+      .services-img {
+        max-height: 400px;
+        width: auto;
+        margin: 0 auto;
+        display: block;
+      }
+    </style>
 
   </main>
+
+  <style>
+  /* For screens larger than 992px */
+  @media (min-width: 992px) {
+    #sticky-content {
+      position: sticky;
+      top: 100px; /* Adjust this value based on your header height */
+      transition: all 0.3s ease;
+    }
+  }
+  
+  /* For screens smaller than 992px */
+  @media (max-width: 991.98px) {
+    #sticky-content {
+      position: static;
+    }
+  }
+  </style>
 
   <div ng-include="'footer.html'"></div>
 

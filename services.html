@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app>
 
 <head>
   <meta charset="utf-8">
@@ -60,6 +60,10 @@
     });
   </script>
 
+    <!-- AngularJS library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.3/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.3/angular-route.min.js"></script>
+  <script src="./assets/js/app.js"></script>
 
 </head>
 
@@ -70,47 +74,31 @@
 
       <a href="index.html" class="logo d-flex align-items-center me-auto">
         <img src="assets/img/logo.png" alt="">
-        <h1 class="sitename">RiceTech</h1><span>.</span>
+        <h1 class="sitename">RiseTech</h1>
       </a>
 
       <nav id="navmenu" class="navmenu">
         <ul>
           <li><a href="index.html">Home</a></li>
-          <li class="dropdown"><a href="about.html"><span>About</span>
-            <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-            <ul>
-              <li><a href="team.html">Team</a></li>
-              <li><a href="testimonials.html">Testimonials</a></li>
-            </ul>
-          </li>
+          <li><a href="about.html">About</a></li>
           <li class="dropdown"><a href="services.html" class="active"><span>Services</span>
             <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
-              <li class="dropdown"><a href="#">
-                <span>Cloud Solutions</span><i class="bi bi-chevron-down toggle-dropdown"></i></a>
+              <li class="dropdown"><a href="services.html">
+                <span>Cloud</span><i class="bi bi-chevron-down toggle-dropdown"></i></a>
                 <ul>
-                  <li><a href="#">Cloud Migration</a></li>
-                  <li><a href="#">Managed Cloud</a></li>
-                  <li><a href="#">Hybrid Cloud</a></li>
-                  <li><a href="#">Cloud Security</a></li>
+                  <li><a href="cloud-migration.html">Cloud Migration</a></li>
+                  <li><a href="cloud-modernization.html">Cloud Modernization</a></li>
+                  <li><a href="cloud-migration.html">Cloud Application Development</a></li>
                 </ul>
               </li>
               <li class="dropdown"><a href="#">
-                <span>Cybersecurity</span><i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                <span>Security</span><i class="bi bi-chevron-down toggle-dropdown"></i></a>
                 <ul>
-                  <li><a href="#">Risk Assessment</a></li>
-                  <li><a href="#">Penetration Testing</a></li>
-                  <li><a href="#">Security Monitoring</a></li>
-                  <li><a href="#">Compliance</a></li>
-                </ul>
-              </li>
-              <li class="dropdown"><a href="#">
-                <span>DevOps</span><i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                <ul>
-                  <li><a href="#">CI/CD Pipelines</a></li>
-                  <li><a href="#">Infrastructure as Code</a></li>
-                  <li><a href="#">Containerization</a></li>
-                  <li><a href="#">Automation</a></li>
+                  <li><a href="#">Security service1</a></li>
+                  <li><a href="#">Security service2</a></li>
+                  <li><a href="#">Security service3</a></li>
+                  <li><a href="#">Security service4</a></li>
                 </ul>
               </li>
             </ul>
@@ -118,28 +106,92 @@
           <li class="dropdown"><a href="products.html"><span>Products</span>
             <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
-              <li class="dropdown"><a href="#">
-                <span>Security Products</span><i class="bi bi-chevron-down toggle-dropdown"></i></a>
+              <li class="dropdown"><a href="products.html">
+                <span>HP</span><i class="bi bi-chevron-down toggle-dropdown"></i></a>
                 <ul>
-                  <li><a href="#">Endpoint Protection</a></li>
-                  <li><a href="#">Firewall Solutions</a></li>
-                  <li><a href="#">SIEM Platform</a></li>
+                  <li><a href="HP-001.html">HP EliteBook 840</a></li>
+                  <li><a href="HP-002.html">HP ProBook 450</a></li>
+                  <li><a href="HP-003.html">HP LaserJet Pro M404dn</a></li>
                 </ul>
               </li>
-              <li class="dropdown"><a href="#">
-                <span>Cloud Products</span><i class="bi bi-chevron-down toggle-dropdown"></i></a>
+              <li class="dropdown"><a href="products.html">
+                <span>DELL</span><i class="bi bi-chevron-down toggle-dropdown"></i></a>
                 <ul>
-                  <li><a href="#">Cloud Management</a></li>
-                  <li><a href="#">Backup Solutions</a></li>
-                  <li><a href="#">Monitoring Tools</a></li>
+                  <li><a href="DL-001.html">Dell Inspiron 15</a></li>
+                  <li><a href="DL-002.html">Dell OptiPlex 3080</a></li>
+                  <li><a href="DL-003.html">Dell Pro 24 All-in-One</a></li>
                 </ul>
               </li>
-              <li class="dropdown"><a href="#">
-                <span>Networking</span><i class="bi bi-chevron-down toggle-dropdown"></i></a>
+              <li class="dropdown"><a href="products.html">
+                <span>Lenovo</span><i class="bi bi-chevron-down toggle-dropdown"></i></a>
                 <ul>
-                  <li><a href="#">SD-WAN Solutions</a></li>
-                  <li><a href="#">Network Monitoring</a></li>
-                  <li><a href="#">Wireless Solutions</a></li>
+                  <li><a href="LN-001.html">Lenovo ThinkPad E14</a></li>
+                  <li><a href="LN-002.html">Lenovo IdeaCentre AIO 3</a></li>
+                  <li><a href="LN-003.html">Lenovo ThinkPad E16 Gen 2</a></li>
+                </ul>
+              </li>
+              <li class="dropdown"><a href="products.html">
+                <span>Huawei</span><i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                <ul>
+                  <li><a href="HW-001.html">Huawei MateBook D15</a></li>
+                  <li><a href="HW-002.html">Huawei WiFi AX3</a></li>
+                  <li><a href="HW-003.html">Huawei MateBook X Pro</a></li>
+                </ul>
+              </li>
+              <li class="dropdown"><a href="products.html">
+                <span>Epson</span><i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                <ul>
+                  <li><a href="EP-001.html">Epson L3250</a></li>
+                  <li><a href="EP-002.html">Epson EB-E01</a></li>
+                  <li><a href="EP-003.html">Epson Ecotank L6460</a></li>
+                </ul>
+              </li>
+              <li class="dropdown"><a href="products.html">
+                <span>WD</span><i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                <ul>
+                  <li><a href="WD-001.html">WD Blue 1TB HDD</a></li>
+                  <li><a href="WD-002.html">WD My Passport 2TB</a></li>
+                  <li><a href="WD-003.html">WD My Passport 4TB</a></li>
+                </ul>
+              </li>
+              <li class="dropdown"><a href="products.html">
+                <span>Sandisk</span><i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                <ul>
+                  <li><a href="SD-001.html">SanDisk Ultra Dual Drive 64GB</a></li>
+                  <li><a href="SD-002.html">SanDisk Extreme microSD 128GB</a></li>
+                  <li><a href="SD-003.html">SanDisk 1TB Portable SSD</a></li>
+                </ul>
+              </li>
+              <li class="dropdown"><a href="products.html">
+                <span>Hikvision</span><i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                <ul>
+                  <li><a href="HK-001.html">Hikvision DS-2CE1AC0T</a></li>
+                  <li><a href="HK-002.html">Hikvision DVR 4 Channel</a></li>
+                  <li><a href="HK-003.html">HIKVISION 2Mp Indoor Cam</a></li>
+                </ul>
+              </li>
+              <li class="dropdown"><a href="products.html">
+                <span>Aruba</span><i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                <ul>
+                  <li><a href="AR-001.html">Aruba Instant On AP22</a></li>
+                  <li><a href="AR-002.html">Aruba 2530 24G Switch</a></li>
+                  <li><a href="AR-003.html">Aruba 8-Port Gb Smart Switch</a></li>
+                </ul>
+              </li>
+              <li class="dropdown"><a href="products.html">
+                <span>Cisco</span><i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                <ul>
+                  <li><a href="CS-001.html">Cisco Catalyst 2960-X</a></li>
+                  <li><a href="CS-002.html">Cisco Meraki MX64</a></li>
+                  <li><a href="CS-003.html">Cisco Unified IP Phone 6961</a></li>
+                </ul>
+              </li>
+              <li class="dropdown"><a href="products.html">
+                <span>Fortinet</span><i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                <ul>
+                  <li><a href="FT-001.html">FortiGate 40F</a></li>
+                  <li><a href="FT-002.html">FortiAP 231F</a></li>
+                  <li><a href="FT-003.html">FortiGate-80F Hardware</a></li>
                 </ul>
               </li>
             </ul>
@@ -181,7 +233,7 @@
                 </svg>
                 <i class="bi bi-cloud"></i>
               </div>
-               <a href="service-details.html" class="stretched-link">
+               <a href="cloud-migration.html" class="stretched-link">
                 <h3>Cloud Solutions</h3>
               </a>
               <p>Comprehensive cloud services including migration, architecture design, optimization, and management across AWS, Azure, and Google Cloud.</p>
@@ -196,7 +248,7 @@
                 </svg>
                 <i class="bi bi-shield-lock"></i>
               </div>
-              <a href="service-details.html" class="stretched-link">
+              <a href="#" class="stretched-link">
                 <h3>Cybersecurity</h3>
               </a>
               <p>End-to-end security solutions including risk assessment, penetration testing, compliance, and 24/7 threat monitoring.</p>
@@ -211,7 +263,7 @@
                 </svg>
                 <i class="bi bi-terminal"></i>
               </div>
-              <a href="service-details.html" class="stretched-link">
+              <a href="#" class="stretched-link">
                 <h3>DevOps Services</h3>
               </a>
               <p>Automate and streamline your development pipeline with our CI/CD, infrastructure as code, and containerization expertise.</p>
@@ -226,11 +278,11 @@
                 </svg>
                 <i class="bi bi-hdd-network"></i>
               </div>
-              <a href="service-details.html" class="stretched-link">
+              <a href="#" class="stretched-link">
                 <h3>Hardware & Networking Solutions</h3>
               </a>
               <p>Design, implementation, and management of secure, high-performance network infrastructure for businesses of all sizes.</p>
-              <a href="service-details.html" class="stretched-link"></a>
+              <a href="#" class="stretched-link"></a>
             </div>
           </div><!-- End Service Item -->
 
@@ -242,11 +294,11 @@
                 </svg>
                 <i class="bi bi-database-fill"></i>
               </div>
-              <a href="service-details.html" class="stretched-link">
+              <a href="#" class="stretched-link">
                 <h3>Data Management</h3>
               </a>
               <p>Secure storage, backup, recovery, and analytics solutions to turn your data into actionable business insights.</p>
-              <a href="service-details.html" class="stretched-link"></a>
+              <a href="#" class="stretched-link"></a>
             </div>
           </div><!-- End Service Item -->
 
@@ -258,11 +310,11 @@
                 </svg>
                 <i class="bi bi-chat-square-text"></i>
               </div>
-              <a href="service-details.html" class="stretched-link">
+              <a href="#" class="stretched-link">
                 <h3>Managed IT Services</h3>
               </a>
               <p>Proactive monitoring, maintenance, and support to keep your systems running smoothly 24/7/365.</p>
-              <a href="service-details.html" class="stretched-link"></a>
+              <a href="#" class="stretched-link"></a>
             </div>
           </div><!-- End Service Item -->
 
@@ -288,84 +340,84 @@
           <div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="100">
             <div class="features-item">
               <i class="bi bi-cloud" style="color: #5578ff;"></i>
-              <h3><a href="service-details.html" class="stretched-link">Cloud Deployment</a></h3>
+              <h3><a href="#" class="stretched-link">Cloud Deployment</a></h3>
             </div>
           </div>
         
           <div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="200">
             <div class="features-item">
               <i class="bi bi-shield-lock" style="color: #e80368;"></i>
-              <h3><a href="service-details.html" class="stretched-link">Cybersecurity</a></h3>
+              <h3><a href="#" class="stretched-link">Cybersecurity</a></h3>
             </div>
           </div>
         
           <div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="300">
             <div class="features-item">
               <i class="bi bi-hdd-network" style="color: #47aeff;"></i>
-              <h3><a href="service-details.html" class="stretched-link">Network Solutions</a></h3>
+              <h3><a href="#" class="stretched-link">Network Solutions</a></h3>
             </div>
           </div>
         
           <div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="400">
             <div class="features-item">
               <i class="bi bi-cpu" style="color: #ffbb2c;"></i>
-              <h3><a href="service-details.html" class="stretched-link">Hardware Support</a></h3>
+              <h3><a href="#" class="stretched-link">Hardware Support</a></h3>
             </div>
           </div>
         
           <div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="500">
             <div class="features-item">
               <i class="bi bi-shield-check" style="color: #29cc61;"></i>
-              <h3><a href="service-details.html" class="stretched-link">Firewall Setup</a></h3>
+              <h3><a href="#" class="stretched-link">Firewall Setup</a></h3>
             </div>
           </div>
         
           <div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="600">
             <div class="features-item">
               <i class="bi bi-cloud-arrow-up" style="color: #4233ff;"></i>
-              <h3><a href="service-details.html" class="stretched-link">Cloud Backup</a></h3>
+              <h3><a href="#" class="stretched-link">Cloud Backup</a></h3>
             </div>
           </div>
         
           <div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="700">
             <div class="features-item">
               <i class="bi bi-laptop" style="color: #ffa76e;"></i>
-              <h3><a href="service-details.html" class="stretched-link">IT Infrastructure</a></h3>
+              <h3><a href="#" class="stretched-link">IT Infrastructure</a></h3>
             </div>
           </div>
         
           <div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="800">
             <div class="features-item">
               <i class="bi bi-gear" style="color: #11dbcf;"></i>
-              <h3><a href="service-details.html" class="stretched-link">System Integration</a></h3>
+              <h3><a href="#" class="stretched-link">System Integration</a></h3>
             </div>
           </div>
         
           <div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="900">
             <div class="features-item">
               <i class="bi bi-cloud-plus" style="color: #e361ff;"></i>
-              <h3><a href="service-details.html" class="stretched-link">Secure Cloud Access</a></h3>
+              <h3><a href="#" class="stretched-link">Secure Cloud Access</a></h3>
             </div>
           </div>
         
           <div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="1000">
             <div class="features-item">
               <i class="bi bi-terminal" style="color: #ff5828;"></i>
-              <h3><a href="service-details.html" class="stretched-link">Server Management</a></h3>
+              <h3><a href="#" class="stretched-link">Server Management</a></h3>
             </div>
           </div>
         
           <div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="1100">
             <div class="features-item">
               <i class="bi bi-graph-up-arrow" style="color: #b20969;"></i>
-              <h3><a href="service-details.html" class="stretched-link">IT Consulting</a></h3>
+              <h3><a href="#" class="stretched-link">IT Consulting</a></h3>
             </div>
           </div>
         
           <div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="1200">
             <div class="features-item">
               <i class="bi bi-tools" style="color: #b2904f;"></i>
-              <h3><a href="service-details.html" class="stretched-link">Tech Support</a></h3>
+              <h3><a href="#" class="stretched-link">Tech Support</a></h3>
             </div>
           </div>
         
@@ -378,80 +430,7 @@
 
   </main>
 
-  <footer id="footer" class="footer dark-background">
-
-    <div class="container footer-top">
-      <div class="row gy-4">
-        <div class="col-lg-4 col-md-6 footer-about">
-          <a href="index.html" class="logo d-flex align-items-center">
-            <span class="sitename">RiseTech</span>
-          </a>
-          <div class="footer-contact pt-3">
-            <p>Office 16 Vishrant Wadi </p>
-            <p>MAHARASTRA, PUNE 411015</p>
-            <p class="mt-3"><strong>Phone:</strong> <span>+1 5589 55488 55</span></p>
-            <p><strong>Email:</strong> <span>sales@risetech.com</span></p>
-          </div>
-          <div class="social-links d-flex mt-4">
-            <a href=""><i class="bi bi-twitter-x"></i></a>
-            <a href=""><i class="bi bi-facebook"></i></a>
-            <a href=""><i class="bi bi-instagram"></i></a>
-            <a href=""><i class="bi bi-linkedin"></i></a>
-          </div>
-        </div>
-
-        <div class="col-lg-2 col-md-3 footer-links">
-          <h4>Useful Links</h4>
-          <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About us</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Terms of service</a></li>
-            <li><a href="#">Privacy policy</a></li>
-          </ul>
-        </div>
-
-        <div class="col-lg-2 col-md-3 footer-links">
-          <h4>Our Services</h4>
-          <ul>
-            <li><a href="#">Cloud</a></li>
-            <li><a href="#">DevOps</a></li>
-            <li><a href="#">Networking</a></li>
-            <li><a href="#">Marketing</a></li>
-            <li><a href="#">Cyber Security</a></li>
-          </ul>
-        </div>
-
-        <div class="col-lg-4 col-md-12 footer-newsletter">
-          <h4>Our Newsletter</h4>
-          <p>Subscribe to our newsletter and receive the latest news about our products and services!</p>
-          <form action="forms/newsletter.php" method="post" class="php-email-form">
-            <div class="newsletter-form"><input type="email" name="email"><input type="submit" value="Subscribe"></div>
-            <div class="loading">Loading</div>
-            <div class="error-message"></div>
-            <div class="sent-message">Your subscription request has been sent. Thank you!</div>
-          </form>
-        </div>
-
-      </div>
-    </div>
-
-    <div class="container copyright text-center mt-4">
-      <p>©<strong class="px-1 sitename">RiseTech</strong>2025 - <span>All Rights Reserved</span></p>
-      <div class="credits">
-        Website by <a href="https://www.woxflow.in">woxflow</a>
-      </div>
-    </div>
-
-  </footer>
-  <div class="floating-icons">
-    <a href="https://wa.me/your-number" target="_blank" class="whatsapp-icon" title="Chat on WhatsApp">
-      <i class="bi bi-whatsapp"></i>
-    </a>
-    <a href="tel:+your-number" class="call-icon" title="Call Now">
-      <i class="bi bi-telephone-fill"></i>
-    </a>
-  </div>
+  <div ng-include="'footer.html'"></div>
 
   <!-- Scroll Top -->
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>

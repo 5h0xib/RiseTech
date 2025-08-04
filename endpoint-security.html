@@ -1,11 +1,10 @@
-
 <!DOCTYPE html>
 <html lang="en" ng-app>
 
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Product Details</title>
+  <title>Service Details</title>
   <meta name="description" content="">
   <meta name="keywords" content="">
 
@@ -32,12 +31,12 @@
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.3/angular.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.3/angular-route.min.js"></script>
   <script src="./assets/js/app.js"></script>
-
+ 
 </head>
 
-<body class="portfolio-details-page">
+<body class="service-details-page">
 
-  <header id="header" class="header d-flex align-items-center sticky-top">
+<header id="header" class="header d-flex align-items-center sticky-top">
     <div class="container position-relative d-flex align-items-center">
 
       <a href="index.html" class="logo d-flex align-items-center me-auto">
@@ -49,7 +48,7 @@
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About</a></li>
-          <li class="dropdown"><a href="services.html"><span>Services</span>
+          <li class="dropdown"><a href="services.html" class="active"><span>Services</span>
             <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
               <li class="dropdown"><a href="services.html">
@@ -74,7 +73,7 @@
               </li>
             </ul>
           </li>
-          <li class="dropdown"><a href="products.html" class="active"><span>Products</span>
+          <li class="dropdown"><a href="products.html"><span>Products</span>
             <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
               <li class="dropdown"><a href="products.html">
@@ -212,131 +211,167 @@
     <!-- Page Title -->
     <div class="page-title accent-background">
       <div class="container d-lg-flex justify-content-between align-items-center">
-        <h1 class="mb-2 mb-lg-0">Product Details</h1>
+        <h1 class="mb-2 mb-lg-0">Security Services</h1>
         <nav class="breadcrumbs">
           <ol>
-            <li><a href="index.html">Home</a></li>
-            <li class="current">Product Details</li>
+            <li><a href="services.html">Services</a></li>
+            <li class="current">Security Services</li>
           </ol>
         </nav>
       </div>
     </div><!-- End Page Title -->
 
-    <!-- Portfolio Details Section -->
-    <section id="portfolio-details" class="portfolio-details section">
+    <!-- Service Details Section -->
+    <section id="service-details" class="service-details section">
 
-      <div class="container" data-aos="fade-up">
+      <div class="container">
 
-        <div class="portfolio-details-slider swiper init-swiper">
-          <script type="application/json" class="swiper-config">
-            {
-              "loop": true,
-              "speed": 600,
-              "autoplay": {
-                "delay": 5000
-              },
-              "slidesPerView": "auto",
-              "navigation": {
-                "nextEl": ".swiper-button-next",
-                "prevEl": ".swiper-button-prev"
-              },
-              "pagination": {
-                "el": ".swiper-pagination",
-                "type": "bullets",
-                "clickable": true
-              }
-            }
-          </script>
-          <div class="swiper-wrapper align-items-center">
+        <div class="row gy-4">
 
-            <div class="swiper-slide">
-              <img src="assets/img/Product img/CS-001.jpg" alt="">
-            </div>
-
-            <div class="swiper-slide">
-              <img src="assets/img/Product img/CS-001.2.jpg" alt="">
-            </div>
-
-            <div class="swiper-slide">
-              <img src="assets/img/Product img/CS-001.3.jpg" alt="">
-            </div>
-
-          </div>
-          <div class="swiper-button-prev"></div>
-          <div class="swiper-button-next"></div>
-          <div class="swiper-pagination"></div>
-        </div>
-
-        <div class="row justify-content-between gy-4 mt-4">
-
-          <div class="col-lg-8" data-aos="fade-up">
-            <div class="portfolio-description">
-              <h2>Cisco Catalyst 2960-X</h2>
-              <p>
-                The <b>Cisco Catalyst 2960-X</b> series are fixed-configuration, stackable Gigabit Ethernet switches designed for enterprise-class access in campus and branch office environments. They are known for their operational simplicity, which helps reduce the total cost of ownership.   
-              </p>              
-              <div class="second-image">
-                <img src="./assets/img/Product img/CS-001.jpg" alt="">
+          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+            <div id="sticky-content">
+              <div class="services-list">
+                <a style="border-radius: 3px;" href="identity-and-access-management.html">Identity and Access Management</a>
+                <a style="border-radius: 3px;" href="cloud-security.html" >Cloud Security</a>
+                <a style="border-radius: 3px;" href="" class="active">EndPoint Security</a>
+                <a style="border-radius: 3px;" href="security-management.html">Security Management</a>
+                <a style="border-radius: 3px;" href="security-assessments.html">Security Assessments</a>
+                <a style="border-radius: 3px;" href="information-protection.html">Information Protection</a>
+                <a style="border-radius: 3px;" href="threat-protection.html">Threat Protection</a>
               </div>
-              <p>
-                 The Catalyst 2960‑X is a stackable, enterprise-grade Gigabit switch offering 24 or 48 ports. Available with LAN Base or LAN Lite feature sets, and PoE+ support on select models. Ideal for campus, branch, and mid-sized business deployments.
-              </p>
-              <p>
-                <h2>
-                 Key Features
-                </h2>
-             <ul class="dot-list">
-                  <li>Ports: 24 or 48 Gigabit Ethernet ports. </li>
-                  <li>Uplinks: Gigabit SFP or 10G SFP+ uplinks. </li>
-                  <li>Stacking (FlexStack-Plus): Stacks up to eight switches (80 Gbps throughput).  </li>
-                  <li>PoE/PoE+ Support: Powers devices (up to 30W per port) with various budgets. </li>
-                  <li>Cisco IOS Software: Uses LAN Lite, LAN Base (Layer 2), or IP Lite (limited Layer 3) feature sets.</li>
-                  <li>Energy Efficient: Includes EEE and Cisco EnergyWise for power savings.</li>
-                  <li>Strong Security: Offers 802.1X, ACLs, Cisco TrustSec, and threat defense.</li>
-                  <li>QoS: Intelligent traffic management for smooth application performance.</li>
-                  <li>Management: Managed via web UI, CLI, Bluetooth, and SNMP.</li>
-              </ul>
 
-              </p>
+              <h4>EndPoint Security</h4>
+              <p>Digital workflows demand advanced security. Traditional firewalls alone can't stop modern threats. RiseTech's Endpoint Security protects every network device—PCs, laptops, smartphones—using Azure Advanced Threat Protection for complete, cloud-based defense against unauthorized access and cyberattacks.</p>
+            
+              <div id="top-form" class="col-lg-100 d-flex align-items-center justify-content-center" data-aos="fade-up" data-aos-delay="200">
+                <form style="margin-top: 20px; padding: 20px; box-shadow: rgba(0, 0, 0, 0.13) 0px 0px 10px; border-radius: 10px; width: 90%;" action="https://api.web3forms.com/submit" method="post" class="align-items-center">
+                  <input type="hidden" name="access_key" value="_________">
+                  <input type="hidden" name="redirect" value="_______">
+                  <input type="hidden" name="subject" value="EndPoint Security Service request">
+
+                  <p class="text-center" style="font-size: 18px;">Get in touch for more info</p>
+
+                  <input type="text" placeholder="Name" class="form-control mb-3">
+                  <input type="text" placeholder="Email" class="form-control mb-3">
+                  <input type="tel" placeholder="Phone" class="form-control mb-3">
+                  <button type="submit" class="btn btn-primary" style="background-color: var(--accent-color);">Get a Quote</button>
+                </form>
+              </div>
 
             </div>
           </div>
 
-          <div class="col-lg-3" data-aos="fade-up" data-aos-delay="100">
-            <div class="portfolio-info">
-              <h3>Product information</h3>
-              <ul>
-                <li><strong>Category</strong>Laptop</li>
-                <li><strong>Brand</strong>CS</li>
+          <div class="col-lg-8" data-aos="fade-up" data-aos-delay="200">
+            <h3>Why EndPoint Security</h3>
+            <p>
+              With rising endpoint vulnerabilities, RiseTech safeguards all entry points—from IoT devices to cloud connections. Our Azure-powered solutions encrypt data flow across your network, blocking breaches before they happen. No device left unprotected, no threat overlooked.
+            </p>
+            <div class="row gy-4 align-items-center" style="margin: 5px;">
+
+              <div class="col-lg-8">
+                <img class="img-fluid rounded-3" data-aos="fade-left" src="assets/img/services/security3.png" alt="Cloud Migration Services">
+              </div>
+
+              <ul class="col-lg-4">
+                <h2>Need for Service</h2>
+                <li><i data-aos="fade-right" data-aos-delay="000" class="bi bi-check2-circle"></i>
+                  <span data-aos="fade-left" data-aos-delay="100">Comprehensive endpoint protection for your entire network infrastructure</span>
+                </li>
+
+                <li><i data-aos="fade-right" data-aos-delay="100" class="bi bi-check2-circle"></i>
+                  <span data-aos="fade-left" data-aos-delay="200">Enterprise-grade cloud access controls to block unauthorized entry</span>
+                </li>
+
+                <li><i data-aos="fade-right" data-aos-delay="200" class="bi bi-check2-circle"></i>
+                  <span data-aos="fade-left" data-aos-delay="300">Proactive defense against evolving cyber threats</span>
+                </li>
+
+                <li><i data-aos="fade-right" data-aos-delay="300" class="bi bi-check2-circle"></i>
+                  <span data-aos="fade-left" data-aos-delay="400">Data integrity protection with military-grade security protocols</span>
+                </li>
+
+                <li><i data-aos="fade-right" data-aos-delay="400" class="bi bi-check2-circle"></i>
+                  <span data-aos="fade-left" data-aos-delay="500">Seamless encryption across all IoT-connected devices</span>
+                </li>
               </ul>
             </div>
-            <div class="col-lg-100 d-flex align-items-center justify-content-center" data-aos="fade-up" data-aos-delay="200">
-              <form action="https://api.web3forms.com/submit" method="post" class="align-items-center">
-                <input type="hidden" name="access_key" value="_________">
-                <input type="hidden" name="redirect" value="_______">
-                <input type="hidden" name="subject" value="__________ Product request">
 
-                <p class="text-center" style="font-size: 18px;">Get in touch for more info</p>
-                
-                <input type="text" placeholder="Name" class="form-control mb-3">
-                <input type="text" placeholder="Email" class="form-control mb-3">
-                <input type="tel" placeholder="Phone" class="form-control mb-3">
-                <button type="submit" class="btn btn-primary ">Get a Quote</button>
-              </form>
-            </div>
-          </div>
+            <p data-aos="fade-up">
+              RiseTech delivers ironclad endpoint security, cloud access controls, and IoT encryption to protect your network from modern cyber threats with military-grade precision.
+            </p>
           
+            <div class="row gy-4 align-items-center" style="margin: 5px; margin-top: 20px;">
+                <ul class="col-lg-4">
+                    <h2>Benefits</h2>
+                    <li><i data-aos="fade-right" data-aos-delay="000" class="bi bi-check2-circle"></i>
+                      <span data-aos="fade-left" data-aos-delay="100">Deploy Microsoft Defender ATP for enterprise-grade endpoint protection</span>
+                    </li>
+
+                    <li><i data-aos="fade-right" data-aos-delay="100" class="bi bi-check2-circle"></i>
+                      <span data-aos="fade-left" data-aos-delay="200">Expert-led endpoint security consultation and implementation</span>
+                    </li>
+
+                    <li><i data-aos="fade-right" data-aos-delay="200" class="bi bi-check2-circle"></i>
+                      <span data-aos="fade-left" data-aos-delay="300">Enterprise-wide Defender ATP deployment with customized rollout</span>
+                    </li>
+
+                    <li><i data-aos="fade-right" data-aos-delay="300" class="bi bi-check2-circle"></i>
+                      <span data-aos="fade-left" data-aos-delay="400">Secure multi-device access with unified protection</span>
+                    </li>
+
+                    <li><i data-aos="fade-right" data-aos-delay="400" class="bi bi-check2-circle"></i>
+                      <span data-aos="fade-left" data-aos-delay="500">Advanced threat prevention and neutralization</span>
+                    </li>
+
+                    <li><i data-aos="fade-right" data-aos-delay="500" class="bi bi-check2-circle"></i>
+                      <span data-aos="fade-left" data-aos-delay="600">Enhanced data security and privacy safeguards</span>
+                    </li>
+                </ul>
+              <div class="col-lg-8">
+                <img class="img-fluid rounded-3" data-aos="fade-right" src="assets/img/services/cloud2.png" alt="Cloud Deployment Services">
+              </div>
+            </div>
+
+            <p data-aos="fade-up">
+              Defender ATP delivers enterprise endpoint security with expert implementation, multi-device protection, and advanced threat prevention for complete data security.
+            </p>
+
+          </div>
+
         </div>
 
       </div>
 
-    </section><!-- /Portfolio Details Section -->
+    </section><!-- /Service Details Section -->
+    <style>
+      .services-img {
+        max-height: 400px;
+        width: auto;
+        margin: 0 auto;
+        display: block;
+      }
+    </style>
 
   </main>
 
+  <style>
+  /* For screens larger than 992px */
+  @media (min-width: 992px) {
+    #sticky-content {
+      position: sticky;
+      top: 100px; /* Adjust this value based on your header height */
+      transition: all 0.3s ease;
+    }
+  }
+  
+  /* For screens smaller than 992px */
+  @media (max-width: 991.98px) {
+    #sticky-content {
+      position: static;
+    }
+  }
+  </style>
 
-
-  <!-- Footer -->
   <div ng-include="'footer.html'"></div>
 
   <!-- Scroll Top -->
@@ -365,6 +400,3 @@
 </body>
 
 </html>
-
-
-

@@ -453,16 +453,13 @@ h6 {
 --------------------------------------------------------------*/
 .footer {
   color: var(--default-color);
+  background-color: #1b1b1b;
   background-image:url("/assets/img/footer-bg.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   font-size: 14px;
   position: relative;
-}
-
-#footer{
-  background-image:url("/assets/img/footer-bg.jpg");
 }
 
 .footer .footer-top {

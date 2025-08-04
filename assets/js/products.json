@@ -1,5 +1,28 @@
 {
   "Hardware": {
+    "Microsoft": [
+      {
+        "id": "MS-001",
+        "name": "Microsoft New Surface Pro (11Th Edition) ",
+        "image": "./assets/img/Product img/MS-001.jpg",
+        "description": "Windows 11 Home Copilot laptop",
+        "price": 115990
+      },
+      {
+        "id": "MS-002",
+        "name": "Microsoft New Surface Laptop",
+        "image": "./assets/img/Product img/MS-002.jpg",
+        "description": "7th Edition laptop",
+        "price": 150990
+      },
+      {
+        "id": "MS-003",
+        "name": "Microsoft Surface Laptop Studio 2",
+        "image": "./assets/img/Product img/MS-003.jpg",
+        "description": "Touchscreen - Intel Core i7 laptop",
+        "price": 119000
+      }
+    ],
     "HP": [
       {
         "id": "HP-001",
@@ -21,6 +44,14 @@
         "image": "./assets/img/Product img/HP-002.avif",
         "description": "Monochrome laser printer with duplex printing",
         "price": 25000
+      },
+
+      {
+        "id": "HP-004",
+        "name": "HP DeskJet 2855e / 2755e ",
+        "image": "./assets/img/Product img/HP-004.jpg",
+        "description": "Wireless All-in-One Color Inkjet Printer,",
+        "price": 6299
       }
     ],
     "Dell": [
@@ -183,6 +214,75 @@
         "description": "HIKVISION 2Mp Indoor Wired Color Camera",
         "price": 2900
       }
+    ],
+    "Seagate ": [
+      {
+        "id": "SG-001",
+        "name": "Seagate One Touch 1TB External SSD",
+        "image": "./assets/img/Product img/SG-001.webp",
+        "description": "Dropbox Plan (STKG1000400)",
+        "price": 8999
+      },
+      {
+        "id": "SG-002",
+        "name": "Seagate 1TB Portable External SSD",
+        "image": "./assets/img/Product img/SG-002.jpg",
+        "description": "Coptimize your drive for max performance",
+        "price": 14999
+      },
+      {
+        "id": "SG-003",
+        "name": "Seagate Expansion 1TB External HDD ",
+        "image": "./assets/img/Product img/SG-003.jpg",
+        "description": "Portable Hard Drive (STKM1000400)",
+        "price": 5649
+      }
+    ],
+    "Kingston ": [
+      {
+        "id": "KG-001",
+        "name": "Kingston FURY Beast DDR5 RGB 6000 MHz DDR5 RAM",
+        "image": "./assets/img/Product img/KG-001.jpg",
+        "description": "Infrared Sync Technology",
+        "price": 5099
+      },
+      {
+        "id": "KG-002",
+        "name": "Kingston KC600 1 TB SATA SSD",
+        "image": "./assets/img/Product img/KG-002.jpg",
+        "description": "Kingston KC600 SSD SKC600/1024G Internal SSD 2.5",
+        "price": 16147
+      },
+      {
+        "id": "KG-003",
+        "name": "Kingston DataTraveler Exodia USB‑A Flash Drive ",
+        "image": "./assets/img/Product img/KG-003.jpg",
+        "description": "Portable Hard Drive (STKM1000400)",
+        "price": 5649
+      }   
+    ],
+      "Canon ": [
+      {
+        "id": "CN-001",
+        "name": "Canon PIXMA TS9520a",
+        "image": "./assets/img/Product img/CN-001.jpg",
+        "description": "Wireless Home All-in-One Inkjet Printer",
+        "price": 48310
+      },
+      {
+        "id": "CN-002",
+        "name": "Canon PIXMA TS7720 ",
+        "image": "./assets/img/Product img/CN-002.jpg",
+        "description": "Wireless Home All-in-One Printer",
+        "price": 14925
+      },
+      {
+        "id": "CN-003",
+        "name": "Canon PIXMA MegaTank G3770  ",
+        "image": "./assets/img/Product img/KG-003.jpg",
+        "description": "BK All-in-one WiFi Inktank Colour Printer with 2 Years Standard Warranty",
+        "price": 16799
+      }   
     ]
   },
   "Networking & Security": {

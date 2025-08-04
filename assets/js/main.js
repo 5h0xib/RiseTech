@@ -1,10 +1,3 @@
-/**
-* Template Name: Company
-* Template URL: https://bootstrapmade.com/company-free-html-bootstrap-template/
-* Updated: Aug 07 2024 with Bootstrap v5.3.3
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
 
 (function() {
   "use strict";
@@ -61,12 +54,22 @@
   /**
    * Preloader
    */
-  const preloader = document.querySelector('#preloader');
-  if (preloader) {
-    window.addEventListener('load', () => {
-      preloader.remove();
-    });
-  }
+const preloader = document.querySelector('#preloader');
+if (preloader) {
+  window.addEventListener('load', () => {
+    // Delay
+    setTimeout(() => {
+      preloader.classList.add('slide-up');
+
+      // Wait for the slide-up animation
+      setTimeout(() => {
+        preloader.remove();
+      }, 200); 
+    }, 200);
+  });
+}
+
+
 
   /**
    * Scroll top button
@@ -192,3 +195,94 @@
   window.addEventListener("load", initSwiper);
 
 })();
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const serviceSection = document.querySelector(".services");
+  const serviceItems = document.querySelectorAll(".services .service-item");
+
+  let hasAnimated = false; // Flag to stop repeat animations
+
+  const observer = new IntersectionObserver((entries, observer) => {
+    if (hasAnimated) return;
+
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        hasAnimated = true; // Mark as done
+        serviceItems.forEach((item, index) => {
+          setTimeout(() => {
+            item.classList.add("fake-hover");
+            setTimeout(() => {
+              item.classList.remove("fake-hover");
+            }, 400);
+          }, index * 200);
+        });
+
+        // Stop observing after animation completes
+        observer.disconnect();
+      }
+    });
+  }, {
+    threshold: 0.3
+  });
+
+  if (serviceSection) {
+    observer.observe(serviceSection);
+  }
+});
+
+
+document.addEventListener('DOMContentLoaded', function() {
+  setTimeout(() => {
+    const globe = Globe()
+      .globeImageUrl('//unpkg.com/three-globe/example/img/earth-blue-marble.jpg')
+      .bumpImageUrl('//unpkg.com/three-globe/example/img/earth-topology.png')
+      .showGlobe(true)
+      .showAtmosphere(true)
+      .atmosphereColor('#ffffff')
+      .atmosphereAltitude(0.1)
+      (document.getElementById('globeViz'));
+
+    // Set renderer background to transparent
+    globe.renderer().setClearColor(0x000000, 0);
+
+    // Auto-rotate
+    globe.controls().autoRotate = true;
+    globe.controls().autoRotateSpeed = -2.5;
+
+    // Adjust camera position
+    globe.camera().position.z = 200;
+    globe.camera().position.y = 50;
+
+    // Disable user interaction
+    const controls = globe.controls();
+    controls.enableZoom = false;
+    controls.enablePan = false;
+    controls.enableRotate = false;
+
+  }, 1300); // delay
+});
+
+
+
+const products = document.querySelectorAll('.product');
+
+function getRandomColor() {
+  const colors = [
+    '#0dcaf0', // cyan
+    '#fd7e14', // orange
+    '#20c997', // teal
+    '#df1529', // red
+    '#6610f2', // indigo
+    '#f3268c'  // pink
+  ];
+  return colors[Math.floor(Math.random() * colors.length)];
+}
+
+products.forEach(product => {
+  product.addEventListener('mouseenter', () => {
+    const color = getRandomColor();
+    product.style.setProperty('--glow-color', color);
+  });
+});
+

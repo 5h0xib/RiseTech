@@ -461,6 +461,10 @@ h6 {
   position: relative;
 }
 
+#footer{
+  background-image:url("/assets/img/footer-bg.jpg");
+}
+
 .footer .footer-top {
   padding-top: 50px;
   border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);

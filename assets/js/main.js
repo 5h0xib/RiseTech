@@ -286,3 +286,29 @@ products.forEach(product => {
   });
 });
 
+// scrollProgress
+
+// Wait until the DOM is ready
+document.addEventListener("DOMContentLoaded", function () {
+  // Create the scrollProgress div
+  const progressBar = document.createElement('div');
+  progressBar.id = 'scrollProgress';
+
+  // Insert it before the <header> tag
+  const header = document.querySelector('header');
+  if (header) {
+    header.parentNode.insertBefore(progressBar, header);
+  } else {
+    // If no <header>, just append to body as fallback
+    document.body.appendChild(progressBar);
+  }
+
+  // Update scroll progress on scroll
+  window.addEventListener('scroll', function () {
+    const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+    const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrollPercent = (scrollTop / scrollHeight) * 100;
+
+    progressBar.style.width = scrollPercent + '%';
+  });
+});

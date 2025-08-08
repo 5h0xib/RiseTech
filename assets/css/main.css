@@ -1,5 +1,32 @@
 
 /* Fonts */
+
+/* Ensure font-display: swap is applied without changing root variables */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Roboto'),url('https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Mu4mxM.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Raleway'),url('https://fonts.gstatic.com/s/raleway/v29/1Ptsg8zYS_SKggPNwE44TYFv.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Nunito'), url('https://fonts.gstatic.com/s/nunito/v24/XRXV3I6Li01BKofINeaB.woff2') format('woff2');
+}
+
+
 :root {
   --default-font: "Roboto",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --heading-font: "Raleway",  sans-serif;
@@ -833,6 +860,29 @@ section,
   border-radius: 40px;
 }
 
+.section-title h6 {
+  font-size: 25px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  position: relative;
+}
+
+/* products */
+.section-title h6:after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 40px;
+  height: 5px;
+  background: var(--accent-color);
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  border-radius: 40px;
+}
+
 .section-title p {
   margin-bottom: 0;
 }
@@ -1074,13 +1124,13 @@ section,
   }
 }
 
-.about .our-story h4 {
+.about .our-story h3 {
   text-transform: uppercase;
   font-size: 1.1rem;
   color: color-mix(in srgb, var(--default-color), transparent 50%);
 }
 
-.about .our-story h3 {
+.about .our-story h4 {
   font-size: 2.25rem;
   font-weight: 700;
   color: color-mix(in srgb, var(--default-color), transparent 20%);
@@ -1239,7 +1289,7 @@ section,
   fill: color-mix(in srgb, var(--default-color), transparent 95%);
 }
 
-.services .service-item h3 {
+.services .service-item h5 {
   font-size: 20px;
   font-weight: 700;
   margin: 15px 0 10px;
@@ -2790,7 +2840,7 @@ div form{
   object-fit: cover;
 }
 
-.product h4 {
+.product h6 {
   background-color: rgb(236, 236, 236);
   color: #222;
   font-size: 16px;
@@ -2808,7 +2858,7 @@ div form{
   border: 1px solid #1b7cbd;
 }
 
-.product:hover h4 {
+.product:hover h6 {
   background-color: #1b7cbd;
   color: #fff;
   cursor: pointer;

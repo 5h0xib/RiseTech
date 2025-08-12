@@ -494,7 +494,7 @@ h6 {
 .footer {
   color: var(--default-color);
   background-color: #1b1b1b;
-  background-image:url("/assets/img/footer-bg.jpg");
+  background-image:url("./assets/img/footer-bg.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -812,6 +812,7 @@ section,
   text-align: center;
   padding-bottom: 60px;
   position: relative;
+  max-width: 700px;
 }
 
 .section-title h2 {
@@ -847,6 +848,50 @@ section,
 }
 
 .section-title h3:after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 40px;
+  height: 5px;
+  background: var(--accent-color);
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  border-radius: 40px;
+}
+
+
+
+/* Service Form */
+  .question-icon {
+    position: absolute;
+    top: -48px;
+    right: 5px;
+    font-size: 80px;
+    color: #0d6efd;
+    transform: rotate(-15deg);
+  }
+
+  @media (max-width: 768px) {
+    .question-icon {
+      top: -40px;
+      right: 10px;
+      font-size: 60px;
+    }
+    
+  }
+
+/* home services */
+.section-title h4 {
+  font-size: 25px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  position: relative;
+}
+
+.section-title h4:after {
   content: "";
   position: absolute;
   display: block;
@@ -1204,6 +1249,81 @@ section,
   object-position: center;
   z-index: 1;
 }
+
+
+/* mission vision */
+
+.mission-vision-values{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.mv-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 300px 300px;
+  max-width: 1200px;
+  margin-top: 60px;
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.mv-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+}
+
+.mv-mission {
+  background: #bee5ff;
+  flex-direction: column;
+  text-align: left;
+  box-shadow: 0 4px 10px rgba(131, 131, 131, 0.3);
+}
+
+.mv-vision {
+  background: #1b7cbd;
+  flex-direction: column;
+  text-align: left;
+  box-shadow: 0 4px 10px 5px rgba(131, 131, 131, 0.3);
+}
+
+.mv-box img {
+  max-width: 150px;
+  max-height: 150px;
+}
+
+.mv-text {
+  max-width: 300px;
+}
+
+.mv-text h2 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  color: #fff;
+  font-size: 30px;
+}
+
+.mv-white {
+  background: #ffffff00;
+}
+
+/* Responsive layout for mobile */
+@media (max-width: 768px) {
+  .mv-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+  .mv-white{
+    margin: 0;
+    /* display: none; */
+  }
+}
+
 
 /*--------------------------------------------------------------
 # Services Section

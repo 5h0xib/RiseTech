@@ -55,6 +55,12 @@
 
 /* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
 
+
+::selection {
+  background-color: #1b7cbd; /* Highlight color */
+  color: rgb(255, 255, 255); /* Text color */
+}
+
 .light-background {
   --background-color: #f7f7f7;
   --surface-color: #ffffff;
@@ -601,7 +607,7 @@ h6 {
   margin-bottom: 15px;
   padding: 6px 8px;
   position: relative;
-  border-radius: 4px;
+  border-radius: 10px;
   border: 1px solid color-mix(in srgb, var(--default-color), transparent 80%);
   display: flex;
   background-color: var(--surface-color);
@@ -632,7 +638,7 @@ h6 {
   background: var(--accent-color);
   color: var(--contrast-color);
   transition: 0.3s;
-  border-radius: 0 4px 4px 0;
+  border-radius: 0 10px 10px 0;
 }
 
 .footer .footer-newsletter .newsletter-form input[type=submit]:hover {
@@ -1480,7 +1486,6 @@ section,
   font-weight: 500;
   line-height: 1;
   margin-bottom: 5px;
-  border-radius: 4px;
   transition: all 0.2s ease-in-out;
   font-family: var(--heading-font);
   border-radius: 100px;
@@ -1530,7 +1535,7 @@ div form{
   margin-top: 20px;
   padding: 20px;
   box-shadow: rgba(0, 0, 0, 0.13) 0px 0px 10px;
-  border-radius: 10px;
+  border-radius: 20px;
 }
 
 /*--------------------------------------------------------------
@@ -1613,7 +1618,7 @@ div form{
   background-color: var(--surface-color);
   box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  border-radius: 5px;
+  border-radius: 10px;
 }
 
 .team .team-member .member-img {
@@ -2704,7 +2709,7 @@ div form{
   border: 0;
   padding: 13px 50px;
   transition: 0.4s;
-  border-radius: 4px;
+  border-radius: 10px;
 }
 
 .contact .php-email-form button[type=submit]:hover {

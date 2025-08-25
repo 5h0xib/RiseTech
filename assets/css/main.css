@@ -1210,12 +1210,6 @@ section,
   color: var(--accent-color);
 }
 
-.about .watch-video i {
-  font-size: 2rem;
-  transition: 0.3s;
-  color: var(--accent-color);
-}
-
 .about .watch-video a {
   font-weight: 600;
   color: color-mix(in srgb, var(--default-color), transparent 20%);
@@ -1270,7 +1264,7 @@ section,
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 300px 300px;
-  max-width: 1300px;  /*Remove or keep it*/
+  /* max-width: 1300px; /* Remove or keep it */
   margin-top: 60px;
   margin-bottom: 20px;
   margin-left: auto;
@@ -1288,14 +1282,12 @@ section,
   background: #bee5ff;
   flex-direction: column;
   text-align: left;
-  box-shadow: 0 4px 10px rgba(131, 131, 131, 0.3);
 }
 
 .mv-vision {
   background: #1b7cbd;
   flex-direction: column;
   text-align: left;
-  box-shadow: 0 4px 10px 5px rgba(131, 131, 131, 0.3);
 }
 
 .mv-box img {
@@ -1329,6 +1321,129 @@ section,
     display: none; /*Remove or keep it*/
   }
 }
+
+/* Case Studies */
+
+.container-cs {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.case-studies {
+    margin-bottom: 40px;
+}
+
+.case-item {
+    background: rgb(255, 255, 255);
+    border-radius: 8px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+}
+
+.case-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+}
+
+.case-item:hover .case-header {
+    background: #166499;
+    transition: ease-in-out 0.3s;
+}
+
+.case-header {
+    padding: 20px;
+    background: #1b7cbd;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: ease-in-out 0.3s;
+}
+
+.case-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.case-icon {
+    transition: transform 0.3s ease;
+    margin-left: 12px;
+}
+
+.case-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+}
+
+.case-content-inner {
+    padding: 0;
+}
+
+.case-content.active {
+    max-height: 2000px;
+}
+
+.case-content-inner {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 25px;
+}
+
+.case-image {
+    flex: 1;
+    min-width: 300px;
+    padding: 15px;
+}
+
+.case-image img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.case-text {
+    flex: 2;
+    min-width: 300px;
+    padding: 15px;
+}
+
+.case-text h3 {
+    color: #166499;
+    margin-bottom: 15px;
+    font-size: 1.4rem;
+}
+
+.case-text p {
+    margin-bottom: 15px;
+    color: #4a5568;
+}
+
+.highlight-cs {
+    background: #ebf8ff;
+    padding: 15px;
+    border-left: 4px solid #1b7cbd;
+    margin: 20px 0;
+    border-radius: 0 4px 4px 0;
+}
+
+.service-pill {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .case-content-inner {
+    flex-direction: column;
+  }
+}
+
 
 
 /*--------------------------------------------------------------
@@ -1638,83 +1753,6 @@ div form{
 /*--------------------------------------------------------------
 # Team Section
 --------------------------------------------------------------*/
-.team .team-member {
-  background-color: var(--surface-color);
-  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  border-radius: 10px;
-}
-
-.team .team-member .member-img {
-  position: relative;
-  overflow: hidden;
-}
-
-.team .team-member .social {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  height: 40px;
-  opacity: 0;
-  transition: ease-in-out 0.3s;
-  background: color-mix(in srgb, var(--background-color), transparent 20%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.team .team-member .social a {
-  transition: color 0.3s;
-  color: var(--heading-color);
-  margin: 0 10px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.team .team-member .social a i {
-  line-height: 0;
-}
-
-.team .team-member .social a:hover {
-  color: var(--accent-color);
-}
-
-.team .team-member .social i {
-  font-size: 18px;
-  margin: 0 2px;
-}
-
-.team .team-member .member-info {
-  padding: 25px 15px;
-  text-align: center;
-}
-
-.team .team-member .member-info h4 {
-  font-weight: 700;
-  margin-bottom: 5px;
-  font-size: 18px;
-  color: color-mix(in srgb, var(--default-color), transparent 20%);
-}
-
-.team .team-member .member-info span {
-  display: block;
-  font-size: 13px;
-  font-weight: 400;
-  color: color-mix(in srgb, var(--default-color), transparent 40%);
-}
-
-.team .team-member .member-info p {
-  font-style: italic;
-  font-size: 14px;
-  line-height: 26px;
-  color: color-mix(in srgb, var(--default-color), transparent 40%);
-}
-
-.team .team-member:hover .social {
-  opacity: 1;
-}
 
 /*--------------------------------------------------------------
 # Testimonials Section

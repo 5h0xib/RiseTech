@@ -81,3 +81,28 @@ app.controller('ProductController', ['$scope', '$http', function ($scope, $http)
     });
 
 }]);
+
+
+// Case Study Toggle Functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const caseHeaders = document.querySelectorAll('.case-header');
+   
+    caseHeaders.forEach(header => {
+        header.addEventListener('click', function() {
+            const content = this.nextElementSibling;
+            const icon = this.querySelector('.case-icon i');
+            
+            // Toggle active class
+            content.classList.toggle('active');
+            
+            // Change icon
+            if (content.classList.contains('active')) {
+                icon.classList.remove('bi-caret-down-fill');
+                icon.classList.add('bi-caret-up');
+            } else {
+                icon.classList.remove('bi-caret-up');
+                icon.classList.add('bi-caret-down-fill');
+            }
+        });
+    });
+});

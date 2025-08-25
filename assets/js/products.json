@@ -279,7 +279,7 @@
       {
         "id": "CN-003",
         "name": "Canon PIXMA MegaTank G3770  ",
-        "image": "./assets/img/Product img/CN-003.1.jpg",
+        "image": "./assets/img/Product img/KG-003.jpg",
         "description": "BK All-in-one WiFi Inktank Colour Printer with 2 Years Standard Warranty",
         "price": 16799
       }   
@@ -356,5 +356,4 @@
       }
     ]
   }
-
 }

@@ -359,7 +359,7 @@
 </head>
 <body>
 
-    <header id="header" class="header d-flex align-items-center sticky-top">
+  <header id="header" class="header d-flex align-items-center sticky-top">
     <div class="container position-relative d-flex align-items-center">
 
       <a href="index.html" class="logo d-flex align-items-center me-auto">
@@ -369,8 +369,13 @@
 
       <nav id="navmenu" class="navmenu">
         <ul>
-          <li><a href="index.html" class="active">Home</a></li>
-          <li><a href="about.html">About</a></li>
+          <li><a href="index.html">Home</a></li>
+          <li class="dropdown"><a href="about.html"><span>About</span>
+            <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+                <li><a href="index.html">More About us</a></li>
+            </ul>
+          </li>
           <li class="dropdown"><a href="services.html"><span>Services</span>
             <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
@@ -400,6 +405,21 @@
                   <li><a href="data-transformation-consulting.html">Data Transformation Cons...</a></li>
                   <li><a href="business-dashboarding.html">Business Dashboarding</a></li>
                   <li><a href="database-migration-data-warehouse-modernization.html">Database migration data...</a></li>
+                </ul>
+              </li>
+              <li class="dropdown"><a href="ai-&-data-practice.html">
+                  <span>Professional services</span><i class="bi bi-chevron-down toggle-dropdown"></i>
+                </a>
+                <ul>
+                  <li><a href="ai-&-data-practice.html">AI & Data Practice</a></li>
+                  <li><a href="cloud-&-platform.html">Cloud & Platform (Azure)...</a></li>
+                  <li><a href="cybersecurity-practice.html">Cybersecurity Practice</a></li>
+                  <li><a href="modern-workplace-practice.html">Modern Workplace Practice</a></li>
+                  <li><a href="business-applications-&-automation.html">Business Applications &...</a></li>
+                  <li><a href="networking-edge-&-iot.html">Networking, Edge & IoT... </a></li>
+                  <li><a href="project-management-office.html">Project Management Office...</a></li>
+                  <li><a href="architecture-guilds.html">Architecture Guilds &...</a></li>
+                  <li><a href="web-development.html">Web Development</a></li>
                 </ul>
               </li>
             </ul>
@@ -625,15 +645,20 @@
                     
                     <div class="contact-info">
                         <div class="contact-p-item">
-                            <strong class="p-bold">RiseTech General Trading CO. LLS S.O.C</strong><br>
-                            AL Khabeeshi Building Office <br>Number - 3-211 Dubai, UAE
+                            <strong class="p-bold">RiseTech General Trading CO. LLS S.O.C</strong><br><br>
+                            <b>India:</b> Office 16 , First Floor Navrang Plaza Tingre Nagar, Airport Rd, near Sawant Petrol Pump, Vishrantwadi, Pune, Maharashtra 411015<br><br>
+                            <b>Dubai:</b>AL Khabeeshi Building Office <br>Number - 3-211 Dubai, UAE
                         </div>
                         <div class="contact-p-item">
                             <strong class="p-bold">Email:</strong><br>
                             sales@risetechglobal.com<br><br>
                             <strong class="p-bold">Phone:</strong><br>
-                            +971 50 181 7265
+                            <b>(UAE)</b>+971 50 181 7265<br>
+                            <b>(India)</b>+91 87660 95829<br>
                         </div>
+                    </div>
+                    <div class="container text-center mt-5">
+                      <a class="button" href="services.html" aria-label="View RiseTech Services">Contact Us</a>
                     </div>
                 </div>
             </div>

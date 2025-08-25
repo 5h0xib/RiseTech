@@ -8,7 +8,7 @@
   <title>About - RiseTech IT Solutions</title>
   <meta name="title" content="RiseTech - Leading IT Solutions & Cloud Migration Experts">
   <meta name="description" content="RiseTech is a trusted IT partner delivering tailored cloud migrations, 24/7 security operations, and certified expertise across all major platforms.">
-  <meta name="robots" content="index, follow">
+  <meta name="robots" content="About, follow">
   <meta name="author" content="RiseTech">
   <meta name="keywords" content="About RiseTech, Cloud Migration, IT Consultancy, IT Solutions, Cybersecurity, Cloud Experts, Technology Services, Cloud Infrastructure">
 
@@ -73,7 +73,7 @@
 
 <body class="about-page">
 
-    <header id="header" class="header d-flex align-items-center sticky-top">
+  <header id="header" class="header d-flex align-items-center sticky-top">
     <div class="container position-relative d-flex align-items-center">
 
       <a href="index.html" class="logo d-flex align-items-center me-auto">
@@ -84,7 +84,12 @@
       <nav id="navmenu" class="navmenu">
         <ul>
           <li><a href="index.html">Home</a></li>
-          <li><a href="about.html" class="active">About</a></li>
+          <li class="dropdown"><a class="active" href="about.html"><span>About</span>
+            <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+                <li><a href="index.html">More About us</a></li>
+            </ul>
+          </li>
           <li class="dropdown"><a href="services.html"><span>Services</span>
             <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
@@ -114,6 +119,21 @@
                   <li><a href="data-transformation-consulting.html">Data Transformation Cons...</a></li>
                   <li><a href="business-dashboarding.html">Business Dashboarding</a></li>
                   <li><a href="database-migration-data-warehouse-modernization.html">Database migration data...</a></li>
+                </ul>
+              </li>
+              <li class="dropdown"><a href="ai-&-data-practice.html">
+                  <span>Professional services</span><i class="bi bi-chevron-down toggle-dropdown"></i>
+                </a>
+                <ul>
+                  <li><a href="ai-&-data-practice.html">AI & Data Practice</a></li>
+                  <li><a href="cloud-&-platform.html">Cloud & Platform (Azure)...</a></li>
+                  <li><a href="cybersecurity-practice.html">Cybersecurity Practice</a></li>
+                  <li><a href="modern-workplace-practice.html">Modern Workplace Practice</a></li>
+                  <li><a href="business-applications-&-automation.html">Business Applications &...</a></li>
+                  <li><a href="networking-edge-&-iot.html">Networking, Edge & IoT... </a></li>
+                  <li><a href="project-management-office.html">Project Management Office...</a></li>
+                  <li><a href="architecture-guilds.html">Architecture Guilds &...</a></li>
+                  <li><a href="web-development.html">Web Development</a></li>
                 </ul>
               </li>
             </ul>
@@ -279,9 +299,9 @@
           <div class="col-lg-7" data-aos="fade-up" data-aos-delay="100">
             <h2 class="inner-title">Transforming Businesses with Technology</h2>
             <div class="our-story">
-              <h4>Est 2025</h4>
+              <h4>Est 2020</h4>
               <h3>Our Story</h3>
-              <p><b>Risetech</b> is a homegrown information technology <b>(IT)</b>  startup based in <b>Dubai</b> with an aim to provide comprehensive solutions of IT product & services for <b>B2C & B2B</b> needs across the spectrum. We at, <b>Risetech</b> genuinely believe that technology is one of the fundamental building block to drive the growth & innovation for both society & enterprises to build & shape the future and this is only possible by bridging the divide between the tech <b>innovation & tech consumption</b> & we want to play that role. Our endeavor is to ensure that technology is available for & <b>accessible by everyone</b> at the most competitive value proposition.</p>
+              <p><b>Risetech</b> is a homegrown information technology <b>(IT)</b>  startup based in <b>India</b> and Branch office in <b>Duabi</b> with an aim to provide comprehensive solutions of IT product & services for <b>B2C & B2B</b> needs across the spectrum. We at, <b>Risetech</b> genuinely believe that technology is one of the fundamental building block to drive the growth & innovation for both society & enterprises to build & shape the future and this is only possible by bridging the divide between the tech <b>innovation & tech consumption</b> & we want to play that role. Our endeavor is to ensure that technology is available for & <b>accessible by everyone</b> at the most competitive value proposition.</p>
               <ul>
                 <li><i class="bi bi-check-circle"></i> <span>Seamless cloud transitions for <b>businesses</b> of all sizes</span></li>
                 <li><i class="bi bi-check-circle"></i> <span><b>24/7 security</b> operations center protecting clients</span></li>
@@ -301,7 +321,7 @@
     <div class="mv-container">
 
       <!-- Mission text -->
-      <div class="mv-box mv-mission" style="background: #bee5ff;" data-aos="fade-down" data-aos-delay="000">
+      <div class="mv-box mv-mission" style="background: #b1c4d148;" data-aos="fade-down" data-aos-delay="000">
         <div class="mv-text">
           <h2 style="color:#1b7cbd;"><strong>OUR MISSION</strong></h2>
           <p style="color:#1b7cbd;">
@@ -357,7 +377,7 @@
 
 
     <!-- Team Section -->
-    <section id="team" class="team section light-background">
+    <section id="team" class="team section">
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
@@ -365,88 +385,25 @@
         <p>At RiseTech we have a team of experts</p>
       </div><!-- End Section Title -->
 
-      <div class="container">
+      <iframe data-aos="fade-up" id="myFrame" src="./src/sample.html" frameborder="0" width="100%"></iframe>
+      <style>
+        #myFrame {
+          height: 330px;
+        }
+        @media (max-width: 1006px) {
+          #myFrame {
+            height: 800px; 
+          }
+        }
+      </style>
 
-        <div class="row gy-4">
-
-          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
-            <div class="team-member">
-              <div class="member-img">
-                <img src="assets/img/team/team-1.jpg" class="img-fluid" alt="">
-                <div class="social">
-                  <a href=""><i class="bi bi-twitter-x"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
-                </div>
-              </div>
-              <div class="member-info">
-                <h4>Person1</h4>
-                <span>Job Title</span>
-              </div>
-            </div>
-          </div><!-- End Team Member -->
-
-          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
-            <div class="team-member">
-              <div class="member-img">
-                <img src="assets/img/team/team-2.jpg" class="img-fluid" alt="">
-                <div class="social">
-                  <a href=""><i class="bi bi-twitter-x"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
-                </div>
-              </div>
-              <div class="member-info">
-                <h4>Person2</h4>
-                <span>Job Title</span>
-              </div>
-            </div>
-          </div><!-- End Team Member -->
-
-          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
-            <div class="team-member">
-              <div class="member-img">
-                <img src="assets/img/team/team-1.jpg" class="img-fluid" alt="">
-                <div class="social">
-                  <a href=""><i class="bi bi-twitter-x"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
-                </div>
-              </div>
-              <div class="member-info">
-                <h4>Person3</h4>
-                <span>Job Title</span>
-              </div>
-            </div>
-          </div><!-- End Team Member -->
-
-          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="400">
-            <div class="team-member">
-              <div class="member-img">
-                <img src="assets/img/team/team-2.jpg" class="img-fluid" alt="">
-                <div class="social">
-                  <a href=""><i class="bi bi-twitter-x"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
-                </div>
-              </div>
-              <div class="member-info">
-                <h4>Person4</h4>
-                <span>Job Title</span>
-              </div>
-            </div>
-          </div><!-- End Team Member -->
-
-        </div>
-
+      <div class="container text-center mt-5" data-aos="fade-up" data-aos-delay="0">
+        <a class="button" href="team.html" aria-label="View RiseTech Services">Learn More</a>
       </div>
 
     </section><!-- /Team Section -->
 
+  
     <!-- Skills Section -->
     <section id="skills" class="skills section">
 
@@ -515,6 +472,136 @@
       </div>
 
     </section><!-- /Skills Section -->
+
+    <div class="container-cs">
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Case Studies</h2>
+        <p>Discover Our Proven Results</p>
+      </div><!-- End Section Title -->
+        
+        <div class="case-studies">
+            <!-- Case Study 1 -->
+            <div class="case-item" data-aos="fade-up" data-aos-delay="100">
+                <div class="case-header">
+                    <h2 class="case-title" style="color: #fff;">Cloud Solutions for Engineering Company</h2>
+                    <span class="case-icon"><i class="bi bi-caret-down-fill"></i></span>
+                </div>
+                <div class="case-content">
+                    <div class="case-content-inner">
+                        <div class="case-image">
+                            <img src="https://images.unsplash.com/photo-1568992687947-868a62a9f521?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Engineering Cloud Solutions">
+                        </div>
+                        <div class="case-text">
+                            <h3>Design, Deploy and Manage for a leading Engineering Company</h3>
+                            <p>A market leader in end-to-end engineering solutions and products needed a platform that could support their developing business model in the cloud environment.</p>
+                            <p>Small players with niche solutions were turning into competition, and success depended on widening their cloud footprint across various business units.</p>
+                            <div class="highlight-cs">
+                                <p><strong>Solution delivered:</strong> An intelligent platform built to support cloud services and a complete enterprise mobility solution, deeply integrated with Microsoft EMS and Intune.</p>
+                            </div>
+                            <p>Adoption of cloud services accelerated through the new platform with a complete insight of every activity performed and data shared.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Case Study 2 -->
+            <div class="case-item" data-aos="fade-up" data-aos-delay="150">
+                <div class="case-header">
+                    <h2 class="case-title" style="color: #fff;">Enterprise Cloud with Automation</h2>
+                    <span class="case-icon"><i class="bi bi-caret-down-fill"></i></span>
+                </div>
+                <div class="case-content">
+                    <div class="case-content-inner">
+                        <div class="case-text">
+                            <h3>Enterprise Cloud services with automation for a Global Consumer Manufacturer</h3>
+                            <p>A British-Dutch manufacturing company, the largest fast-moving company in consumer goods with operations across more than 100 countries, needed to scale business services on their cloud marketplace.</p>
+                            <p>They required capacity on demand with respect to IT operations for cost optimization and service assurance.</p>
+                            <div class="highlight-cs">
+                                <p><strong>Solution delivered:</strong> Intelligent combination of people, process and technology supported by an optimal mix of onsite and offshore teams with an integrated cloud management platform.</p>
+                            </div>
+                            <p>Automation reduced the overall effort by 40%, providing significant cost savings while maintaining service quality.</p>
+                        </div>
+                        <div class="case-image">
+                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Cloud Automation">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Case Study 3 -->
+            <div class="case-item" data-aos="fade-up" data-aos-delay="200">
+                <div class="case-header">
+                    <h2 class="case-title" style="color: #fff;">Microsoft CSP Program in MEA</h2>
+                    <span class="case-icon"><i class="bi bi-caret-down-fill"></i></span>
+                </div>
+                <div class="case-content">
+                    <div class="case-content-inner">
+                        <div class="case-image">
+                            <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Microsoft CSP">
+                        </div>
+                        <div class="case-text">
+                            <h3>Deployment and Managed Services for Microsoft CSP Program in MEA region</h3>
+                            <p>Microsoft, a global market leader in digital transformation, needed break-fix support across Middle East and India on all Microsoft Azure and Office 365 products.</p>
+                            <p>The challenge included real-time monitoring and support to tickets raised on Microsoft partner Portal.</p>
+                            <div class="highlight-cs">
+                                <p><strong>Solution delivered:</strong> End to End Infrastructure designing, deployment and maintenance with real-time support to end customers and partners across Middle East and India.</p>
+                            </div>
+                            <p>Provided single point of contact, ownership and accountability on managed services for on premise and cloud infrastructure with a sophisticated partner engagement process.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Case Study 4 -->
+            <div class="case-item" data-aos="fade-up" data-aos-delay="250">
+                <div class="case-header">
+                    <h2 class="case-title" style="color: #fff;">Migration for Shipping Company</h2>
+                    <span class="case-icon"><i class="bi bi-caret-down-fill"></i></span>
+                </div>
+                <div class="case-content">
+                    <div class="case-content-inner">
+                        <div class="case-text">
+                            <h3>Migration Services with 24/7 Support for a leading shipping company</h3>
+                            <p>An international leader in providing offshore transportation services of goods and petroleum products needed to transition their on-premise infrastructure from across 11 locations worldwide to Microsoft Azure.</p>
+                            <p>The challenge included ensuring business continuity, disaster recovery, data security, compliance and governance for information published on Cloud.</p>
+                            <div class="highlight-cs">
+                                <p><strong>Solution delivered:</strong> Migration of more than 480+ virtual machines and workloads to Microsoft Azure backed with Disaster recovery and Microsoft 365 Enterprise Mobility and Security suite implementation.</p>
+                            </div>
+                            <p>The solution provided larger outreach towards Cloud Services for better stability, heightened end user experience, and ability to upscale on the same architecture.</p>
+                        </div>
+                        <div class="case-image">
+                            <img src="https://images.unsplash.com/photo-1542744095-fcf48d80b0fd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Shipping Migration">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Case Study 5 -->
+            <div class="case-item" data-aos="fade-up" data-aos-delay="300">
+                <div class="case-header">
+                    <h2 class="case-title" style="color: #fff;">Core Banking on Cloud</h2>
+                    <span class="case-icon"><i class="bi bi-caret-down-fill"></i></span>
+                </div>
+                <div class="case-content">
+                    <div class="case-content-inner">
+                        <div class="case-image">
+                            <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Core Banking">
+                        </div>
+                        <div class="case-text">
+                            <h3>Core banking Infrastructure on Cloud in India</h3>
+                            <p>A Multilateral Financial institution headquartered in UAE needed to deploy core business application in a highly secure, scalable and available scenario after evaluating all possible leading Cloud providers.</p>
+                            <p>The need for a scalable and agile infrastructure to accommodate enhanced deployments and onboarding of new branches while ensuring security against new vulnerabilities and attacks.</p>
+                            <div class="highlight-cs">
+                                <p><strong>Solution delivered:</strong> High Performance Computing System distributed across multiple Availability zones, customized solution to match clients legal and compliance using Azure, and high end connectivity using Azure Express Route.</p>
+                            </div>
+                            <p>Achieved TCO reduction from 40% to 26%, zero downtime even through geo political disruptions, and best RPO and RTO maintenance solution for minimal data loss.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
         <!-- Clients Section -->
     <section id="clients" class="clients section">

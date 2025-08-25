@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<script
+  src="https://code.jquery.com/jquery-2.2.4.min.js"
+  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+  crossorigin="anonymous"></script>
+</head>
+
+<body>
+<div class="container-fluid">
+	<div id="tree"></div>
+</div>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script>
+$(document).ready(function(){
+  $.ajax({
+  dataType: "json",
+  url: "./sample.json"}).done( function( data ) {
+    OrgTree.makeOrgTree($('#tree'), data);
+  });
+});
+</script>
+<style>
+body {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+.org-tree .node {
+  width: 140px;
+  padding: 15px;
+  border: 1px solid #1b7cbd;
+  border-radius: 12px;
+  box-shadow: 0px 5px 10px 0px rgba(0, 132, 255, 0.308);
+  position: relative; }
+.org-tree .item {
+  display: flex;
+  flex-direction: column; }
+.org-tree .parent {
+  position: relative;
+  display: flex;
+  margin-bottom: 20px; }
+  .org-tree .parent:not(.collapsed):after {
+    content: '';
+    position: absolute;
+    background-color: #1b7cbd;
+    width: 2px;
+    height: 10px;
+    bottom: 0;
+    left: 50%;
+    background-color: #1b7cbd;
+    transform: translateY(100%); }
+.org-tree .row .item:first-child > .child::after {
+  left: 50%;
+  width: 50%; }
+.org-tree .row .item:last-child > .child::after {
+  width: calc(50% + 2px); }
+.org-tree .row .item:only-child > .child::after {
+  width: 0px; }
+.org-tree .item > .child:not(.root):before {
+  content: '';
+  position: absolute;
+  background-color: #1b7cbd;
+  left: 50%;
+  top: 0;
+  transform: translateY(-100%);
+  width: 2px;
+  height: 10px; }
+.org-tree .item > .child:after {
+  content: '';
+  position: absolute;
+  background-color: #1b7cbd;
+  left: 0;
+  top: -10px;
+  transform: translateY(-100%);
+  height: 2px;
+  width: 100%; }
+@media screen and (max-width: 99999px) {
+  .org-tree .child-width-1 .item > .child:before, .org-tree .child-width-1 .item > .child:after {
+    display: none; }
+  .org-tree .child-width-1 .item > .child .node:not(.root):before {
+    content: '';
+    position: absolute;
+    background-color: #1b7cbd;
+    width: 2px;
+    height: calc(100% + 20px + 2px);
+    left: calc(50% - 70px - 10px);
+    top: -1px; }
+  .org-tree .child-width-1 .item > .child .node:not(.root)::after {
+    content: '';
+    position: absolute;
+    background-color: #1b7cbd;
+    width: 10px;
+    height: 2px;
+    top: calc(50%);
+    left: calc(50% - 70px - 10px); }
+  .org-tree .child-width-1 .item:last-child:not(:only-child) > .child .node:not(.root):before {
+    height: calc(50% + 2px); }
+  .org-tree .child-width-1 .item:only-child > .child .node:not(.root):before {
+    content: '';
+    position: absolute;
+    background-color: #1b7cbd;
+    width: 2px;
+    height: calc(100% + 20px + 2px);
+    left: calc(50% - 70px - 10px);
+    top: -1px;
+    height: calc(50% + 10px + 2px);
+    top: -11px; }
+  .org-tree .child-width-1 > .row {
+    margin-left: -50%; }
+  .org-tree .child-width-1 .node {
+    margin-bottom: 20px; }
+  .org-tree .child-width-1 .row {
+    margin-left: 20px;
+    margin-right: 0px; }
+    .org-tree .child-width-1 .row .item:first-child:not(:only-child) > .child .node:not(.root)::before {
+      content: '';
+      position: absolute;
+      background-color: #1b7cbd;
+      width: 2px;
+      height: calc(100% + 20px + 2px);
+      left: calc(50% - 70px - 10px);
+      top: -1px;
+      height: calc(100% + 30px + 2px);
+      top: -11px; }
+    .org-tree .child-width-1 .row .item:not(:last-child):before {
+      content: '';
+      position: absolute;
+      background-color: #1b7cbd;
+      width: 2px;
+      height: calc(100% + 20px + 2px);
+      left: calc(50% - 70px - 10px);
+      top: -1px; }
+  .org-tree .child-width-1 .parent {
+    margin-bottom: 0px;
+    display: block; }
+    .org-tree .child-width-1 .parent:not(.collapsed):before {
+      content: '';
+      position: absolute;
+      background-color: #1b7cbd;
+      width: 70px;
+      height: 2px;
+      bottom: -10px;
+      left: calc(50% - 70px); } }
+@media screen and (max-width: 1199px) {
+  .org-tree .child-width-1 .item > .child:before, .org-tree .child-width-1 .item > .child:after {
+    display: none; }
+  .org-tree .child-width-1 .item > .child .node:not(.root):before {
+    content: '';
+    position: absolute;
+    background-color: #1b7cbd;
+    width: 2px;
+    height: calc(100% + 20px + 2px);
+    left: calc(50% - 70px - 10px);
+    top: -1px; }
+  .org-tree .child-width-1 .item > .child .node:not(.root)::after {
+    content: '';
+    position: absolute;
+    background-color: #1b7cbd;
+    width: 10px;
+    height: 2px;
+    top: calc(50%);
+    left: calc(50% - 70px - 10px); }
+  .org-tree .child-width-1 .item:last-child:not(:only-child) > .child .node:not(.root):before {
+    height: calc(50% + 2px); }
+  .org-tree .child-width-1 .item:only-child > .child .node:not(.root):before {
+    content: '';
+    position: absolute;
+    background-color: #1b7cbd;
+    width: 2px;
+    height: calc(100% + 20px + 2px);
+    left: calc(50% - 70px - 10px);
+    top: -1px;
+    height: calc(50% + 10px + 2px);
+    top: -11px; }
+  .org-tree .child-width-1 > .row {
+    margin-left: -50%; }
+  .org-tree .child-width-1 .node {
+    margin-bottom: 20px; }
+  .org-tree .child-width-1 .row {
+    margin-left: 20px;
+    margin-right: 0px; }
+    .org-tree .child-width-1 .row .item:first-child:not(:only-child) > .child .node:not(.root)::before {
+      content: '';
+      position: absolute;
+      background-color: #1b7cbd;
+      width: 2px;
+      height: calc(100% + 20px + 2px);
+      left: calc(50% - 70px - 10px);
+      top: -1px;
+      height: calc(100% + 30px + 2px);
+      top: -11px; }
+    .org-tree .child-width-1 .row .item:not(:last-child):before {
+      content: '';
+      position: absolute;
+      background-color: #1b7cbd;
+      width: 2px;
+      height: calc(100% + 20px + 2px);
+      left: calc(50% - 70px - 10px);
+      top: -1px; }
+  .org-tree .child-width-1 .parent {
+    margin-bottom: 0px;
+    display: block; }
+    .org-tree .child-width-1 .parent:not(.collapsed):before {
+      content: '';
+      position: absolute;
+      background-color: #1b7cbd;
+      width: 70px;
+      height: 2px;
+      bottom: -10px;
+      left: calc(50% - 70px); }
+  .org-tree .child-width-2 .item > .child:before, .org-tree .child-width-2 .item > .child:after {
+    display: none; }
+  .org-tree .child-width-2 .item > .child .node:not(.root):before {
+    content: '';
+    position: absolute;
+    background-color: #1b7cbd;
+    width: 2px;
+    height: calc(100% + 20px + 2px);
+    left: calc(50% - 70px - 10px);
+    top: -1px; }
+  .org-tree .child-width-2 .item > .child .node:not(.root)::after {
+    content: '';
+    position: absolute;
+    background-color: #1b7cbd;
+    width: 10px;
+    height: 2px;
+    top: calc(50%);
+    left: calc(50% - 70px - 10px); }
+  .org-tree .child-width-2 .item:last-child:not(:only-child) > .child .node:not(.root):before {
+    height: calc(50% + 2px); }
+  .org-tree .child-width-2 .item:only-child > .child .node:not(.root):before {
+    content: '';
+    position: absolute;
+    background-color: #1b7cbd;
+    width: 2px;
+    height: calc(100% + 20px + 2px);
+    left: calc(50% - 70px - 10px);
+    top: -1px;
+    height: calc(50% + 10px + 2px);
+    top: -11px; }
+  .org-tree .child-width-2 > .row {
+    margin-left: -50%; }
+  .org-tree .child-width-2 .node {
+    margin-bottom: 20px; }
+  .org-tree .child-width-2 .row {
+    margin-left: 20px;
+    margin-right: 0px; }
+    .org-tree .child-width-2 .row .item:first-child:not(:only-child) > .child .node:not(.root)::before {
+      content: '';
+      position: absolute;
+      background-color: #1b7cbd;
+      width: 2px;
+      height: calc(100% + 20px + 2px);
+      left: calc(50% - 70px - 10px);
+      top: -1px;
+      height: calc(100% + 30px + 2px);
+      top: -11px; }
+    .org-tree .child-width-2 .row .item:not(:last-child):before {
+      content: '';
+      position: absolute;
+      background-color: #1b7cbd;
+      width: 2px;
+      height: calc(100% + 20px + 2px);
+      left: calc(50% - 70px - 10px);
+      top: -1px; }
+  .org-tree .child-width-2 .parent {
+    margin-bottom: 0px;
+    display: block; }
+    .org-tree .child-width-2 .parent:not(.collapsed):before {
+      content: '';
+      position: absolute;
+      background-color: #1b7cbd;
+      width: 70px;
+      height: 2px;
+      bottom: -10px;
+      left: calc(50% - 70px); } }
+@media screen and (max-width: 991px) {
+  .org-tree .child-width-1 .item > .child:before, .org-tree .child-width-1 .item > .child:after {
+    display: none; }
+  .org-tree .child-width-1 .item > .child .node:not(.root):before {
+    content: '';
+    position: absolute;
+    background-color: #1b7cbd;
+    width: 2px;
+    height: calc(100% + 20px + 2px);
+    left: calc(50% - 70px - 10px);
+    top: -1px; }
+  .org-tree .child-width-1 .item > .child .node:not(.root)::after {
+    content: '';
+    position: absolute;
+    background-color: #1b7cbd;
+    width: 10px;
+    height: 2px;
+    top: calc(50%);
+    left: calc(50% - 70px - 10px); }
+  .org-tree .child-width-1 .item:last-child:not(:only-child) > .child .node:not(.root):before {
+    height: calc(50% + 2px); }
+  .org-tree .child-width-1 .item:only-child > .child .node:not(.root):before {
+    content: '';
+    position: absolute;
+    background-color: #1b7cbd;
+    width: 2px;
+    height: calc(100% + 20px + 2px);
+    left: calc(50% - 70px - 10px);
+    top: -1px;
+    height: calc(50% + 10px + 2px);
+    top: -11px; }
+  .org-tree .child-width-1 > .row {
+    margin-left: -50%; }
+  .org-tree .child-width-1 .node {
+    margin-bottom: 20px; }
+  .org-tree .child-width-1 .row {
+    margin-left: 20px;
+    margin-right: 0px; }
+    .org-tree .child-width-1 .row .item:first-child:not(:only-child) > .child .node:not(.root)::before {
+      content: '';
+      position: absolute;
+      background-color: #1b7cbd;
+      width: 2px;
+      height: calc(100% + 20px + 2px);
+      left: calc(50% - 70px - 10px);
+      top: -1px;
+      height: calc(100% + 30px + 2px);
+      top: -11px; }
+    .org-tree .child-width-1 .row .item:not(:last-child):before {
+      content: '';
+      position: absolute;
+      background-color: #1b7cbd;
+      width: 2px;
+      height: calc(100% + 20px + 2px);
+      left: calc(50% - 70px - 10px);
+      top: -1px; }
+  .org-tree .child-width-1 .parent {
+    margin-bottom: 0px;
+    display: block; }
+    .org-tree .child-width-1 .parent:not(.collapsed):before {
+      content: '';
+      position: absolute;
+      background-color: #1b7cbd;
+      width: 70px;
+      height: 2px;
+      bottom: -10px;
+      left: calc(50% - 70px); }
+  .org-tree .child-width-2 .item > .child:before, .org-tree .child-width-2 .item > .child:after {
+    display: none; }
+  .org-tree .child-width-2 .item > .child .node:not(.root):before {
+    content: '';
+    position: absolute;
+    background-color: #1b7cbd;
+    width: 2px;
+    height: calc(100% + 20px + 2px);
+    left: calc(50% - 70px - 10px);
+    top: -1px; }
+  .org-tree .child-width-2 .item > .child .node:not(.root)::after {
+    content: '';
+    position: absolute;
+    background-color: #1b7cbd;
+    width: 10px;
+    height: 2px;
+    top: calc(50%);
+    left: calc(50% - 70px - 10px); }
+  .org-tree .child-width-2 .item:last-child:not(:only-child) > .child .node:not(.root):before {
+    height: calc(50% + 2px); }
+  .org-tree .child-width-2 .item:only-child > .child .node:not(.root):before {
+    content: '';
+    position: absolute;
+    background-color: #1b7cbd;
+    width: 2px;
+    height: calc(100% + 20px + 2px);
+    left: calc(50% - 70px - 10px);
+    top: -1px;
+    height: calc(50% + 10px + 2px);
+    top: -11px; }
+  .org-tree .child-width-2 > .row {
+    margin-left: -50%; }
+  .org-tree .child-width-2 .node {
+    margin-bottom: 20px; }
+  .org-tree .child-width-2 .row {
+    margin-left: 20px;
+    margin-right: 0px; }
+    .org-tree .child-width-2 .row .item:first-child:not(:only-child) > .child .node:not(.root)::before {
+      content: '';
+      position: absolute;
+      background-color: #1b7cbd;
+      width: 2px;
+      height: calc(100% + 20px + 2px);
+      left: calc(50% - 70px - 10px);
+      top: -1px;
+      height: calc(100% + 30px + 2px);
+      top: -11px; }
+    .org-tree .child-width-2 .row .item:not(:last-child):before {
+      content: '';
+      position: absolute;
+      background-color: #1b7cbd;
+      width: 2px;
+      height: calc(100% + 20px + 2px);
+      left: calc(50% - 70px - 10px);
+      top: -1px; }
+  .org-tree .child-width-2 .parent {
+    margin-bottom: 0px;
+    display: block; }
+    .org-tree .child-width-2 .parent:not(.collapsed):before {
+      content: '';
+      position: absolute;
+      background-color: #1b7cbd;
+      width: 70px;
+      height: 2px;
+      bottom: -10px;
+      left: calc(50% - 70px); }
+  .org-tree .child-width-3 .item > .child:before, .org-tree .child-width-3 .item > .child:after {
+    display: none; }
+  .org-tree .child-width-3 .item > .child .node:not(.root):before {
+    content: '';
+    position: absolute;
+    background-color: #1b7cbd;
+    width: 2px;
+    height: calc(100% + 20px + 2px);
+    left: calc(50% - 70px - 10px);
+    top: -1px; }
+  .org-tree .child-width-3 .item > .child .node:not(.root)::after {
+    content: '';
+    position: absolute;
+    background-color: #1b7cbd;
+    width: 10px;
+    height: 2px;
+    top: calc(50%);
+    left: calc(50% - 70px - 10px); }
+  .org-tree .child-width-3 .item:last-child:not(:only-child) > .child .node:not(.root):before {
+    height: calc(50% + 2px); }
+  .org-tree .child-width-3 .item:only-child > .child .node:not(.root):before {
+    content: '';
+    position: absolute;
+    background-color: #1b7cbd;
+    width: 2px;
+    height: calc(100% + 20px + 2px);
+    left: calc(50% - 70px - 10px);
+    top: -1px;
+    height: calc(50% + 10px + 2px);
+    top: -11px; }
+  .org-tree .child-width-3 > .row {
+    margin-left: -50%; }
+  .org-tree .child-width-3 .node {
+    margin-bottom: 20px; }
+  .org-tree .child-width-3 .row {
+    margin-left: 20px;
+    margin-right: 0px; }
+    .org-tree .child-width-3 .row .item:first-child:not(:only-child) > .child .node:not(.root)::before {
+      content: '';
+      position: absolute;
+      background-color: #1b7cbd;
+      width: 2px;
+      height: calc(100% + 20px + 2px);
+      left: calc(50% - 70px - 10px);
+      top: -1px;
+      height: calc(100% + 30px + 2px);
+      top: -11px; }
+    .org-tree .child-width-3 .row .item:not(:last-child):before {
+      content: '';
+      position: absolute;
+      background-color: #1b7cbd;
+      width: 2px;
+      height: calc(100% + 20px + 2px);
+      left: calc(50% - 70px - 10px);
+      top: -1px; }
+  .org-tree .child-width-3 .parent {
+    margin-bottom: 0px;
+    display: block; }
+    .org-tree .child-width-3 .parent:not(.collapsed):before {
+      content: '';
+      position: absolute;
+      background-color: #1b7cbd;
+      width: 70px;
+      height: 2px;
+      bottom: -10px;
+      left: calc(50% - 70px); }
+  .org-tree .child-width-4 .item > .child:before, .org-tree .child-width-4 .item > .child:after {
+    display: none; }
+  .org-tree .child-width-4 .item > .child .node:not(.root):before {
+    content: '';
+    position: absolute;
+    background-color: #1b7cbd;
+    width: 2px;
+    height: calc(100% + 20px + 2px);
+    left: calc(50% - 70px - 10px);
+    top: -1px; }
+  .org-tree .child-width-4 .item > .child .node:not(.root)::after {
+    content: '';
+    position: absolute;
+    background-color: #1b7cbd;
+    width: 10px;
+    height: 2px;
+    top: calc(50%);
+    left: calc(50% - 70px - 10px); }
+  .org-tree .child-width-4 .item:last-child:not(:only-child) > .child .node:not(.root):before {
+    height: calc(50% + 2px); }
+  .org-tree .child-width-4 .item:only-child > .child .node:not(.root):before {
+    content: '';
+    position: absolute;
+    background-color: #1b7cbd;
+    width: 2px;
+    height: calc(100% + 20px + 2px);
+    left: calc(50% - 70px - 10px);
+    top: -1px;
+    height: calc(50% + 10px + 2px);
+    top: -11px; }
+  .org-tree .child-width-4 > .row {
+    margin-left: -50%; }
+  .org-tree .child-width-4 .node {
+    margin-bottom: 20px; }
+  .org-tree .child-width-4 .row {
+    margin-left: 20px;
+    margin-right: 0px; }
+    .org-tree .child-width-4 .row .item:first-child:not(:only-child) > .child .node:not(.root)::before {
+      content: '';
+      position: absolute;
+      background-color: #1b7cbd;
+      width: 2px;
+      height: calc(100% + 20px + 2px);
+      left: calc(50% - 70px - 10px);
+      top: -1px;
+      height: calc(100% + 30px + 2px);
+      top: -11px; }
+    .org-tree .child-width-4 .row .item:not(:last-child):before {
+      content: '';
+      position: absolute;
+      background-color: #1b7cbd;
+      width: 2px;
+      height: calc(100% + 20px + 2px);
+      left: calc(50% - 70px - 10px);
+      top: -1px; }
+  .org-tree .child-width-4 .parent {
+    margin-bottom: 0px;
+    display: block; }
+    .org-tree .child-width-4 .parent:not(.collapsed):before {
+      content: '';
+      position: absolute;
+      background-color: #1b7cbd;
+      width: 70px;
+      height: 2px;
+      bottom: -10px;
+      left: calc(50% - 70px); } }
+
+/*# sourceMappingURL=orgchart.css.map */
+
+</style>
+<script>
+/* OrgChart.js 0.8
+Author Lee Owens 
+https://owens2024.github.io/bootstrap-orgchart/ 
+*/
+var OrgTree = (function() {
+    var publicAPI = {};
+    this.bootstrapGridBase = 12;
+    
+    this.options = {
+        baseClass: 'org-tree',
+        baseLevel: this.bootstrapGridBase,
+        minWidth: 2,
+        collapsable: true,
+        renderNode: function(node){
+            return `<div class="node center-block">
+                        ${node.label}
+                        ${this.renderCollapseIcon(node)}
+                    </div>`;
+        },
+        renderCollapseIcon: function(node){
+            if(this.collapsable && node.children && node.children.length > 0) {
+                return `<br />
+                <a href="#" class="collapse_node">
+                    <i class="glyphicon glyphicon-minus-sign" style="display :none;"></i>
+                </a>`;
+            } else {
+                return '';
+            }
+        },
+        toggleCollapseIcon: function(icon) {
+            $(icon).toggleClass('glyphicon-minus-sign glyphicon-plus-sign');
+        }
+    };
+
+    publicAPI.setOptions = function(options) {
+        $.extend(this.options, options);
+    }.bind(this);
+
+    publicAPI.makeOrgTree = function($elem, data) {
+        var base = $('<div class="' + this.options.baseClass + '">');
+        var row = $('<div class="row">');
+        var level = this.options.baseLevel;
+        var width = this.bootstrapGridBase;
+
+        data.forEach(function(node) {
+            row.append(getNode(node, width, true, level, 100));
+        });
+        base.append(row);
+        $elem.append(base);
+        bindCollapse();
+    }.bind(this);
+    
+    function bindCollapse(){
+        if(this.options.collapsable) {
+            $(document).on('click.orgchart.collapse', '.collapse_node', $.proxy(function(ev){
+                $(ev.target).parents(".item:first").find(".row").toggle();
+                $(ev.target).parents(".parent").toggleClass("collapsed");
+                this.options.toggleCollapseIcon(ev.target);
+            }, this));
+        }
+    }
+
+    function getNode(node, level, noParent, baseCol, width) {
+        var sublevel,
+            self = $('<div class="item col-lg-' + level + '"  data-width="' + width + '">');
+        if(width > 30) {
+            self.addClass('col-md-'+level);
+        }
+
+        if (node.children) {
+
+            var childRow = $('<div class="row">');
+            baseCol = Math.floor(baseCol / node.children.length);
+            if(baseCol == 0) baseCol = 1;
+            self.addClass('child-width-'+baseCol);
+            self.append(makeNode(node, true, !noParent));
+            if (baseCol < this.options.minWidth) {
+                sublevel = this.bootstrapGridBase;
+            }
+            else {
+                sublevel = Math.floor(this.bootstrapGridBase / node.children.length);
+                if (sublevel == 0) {
+                    sublevel = 1;
+                }
+            }
+            var childWidth = Math.floor(width / node.children.length);
+            node.children.forEach(function(node) {
+                childRow.append(getNode(node, sublevel, false, baseCol, childWidth));
+            });
+            self.append(childRow);
+        }
+        else {
+            self.append(makeNode(node, false, !noParent));
+        }
+        return self;
+    }
+
+    function makeNode(node, isParent, isChild) {
+
+        var container;
+        var mainItem = $(this.options.renderNode(node));
+
+        if (isParent) {
+            container = $(`<div class="parent">`);
+            mainItem = container.append(mainItem);
+
+        }
+        container = $('<div class="child">');
+        if (!isChild) {
+            container.addClass('root');
+        }
+        container.append(mainItem);
+        mainItem = container.append(mainItem);
+        return mainItem;
+    }
+    return publicAPI;
+})();
+
+</script>
+</body>
+</html>

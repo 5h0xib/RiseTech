@@ -47,12 +47,13 @@
             <div class="col-lg-4 col-md-12 footer-newsletter">
                 <h4>Our Newsletter</h4>
                 <p>Subscribe to our newsletter and receive the latest news about our products and services!</p>
-                <form action="_______" method="post" class="php-email-form">
-                    <div class="newsletter-form"><input type="email" name="email"><input type="submit"
-                            value="Subscribe"></div>
-                    <div class="loading">Loading</div>
-                    <div class="error-message"></div>
-                    <div class="sent-message">Your subscription request has been sent. Thank you!</div>
+                <form action="https://api.web3forms.com/submit" method="post" class="php-email-form">
+                    <input type="hidden" name="access_key" value="66b058d6-2a27-41db-bd33-c2e12aee64dc">
+                    <input type="hidden" name="redirect" value="https://5h0xib.github.io/RiseTech/subscribed.html">
+                    <input type="hidden" name="subject" value="News Newsletter Subscriber">
+                    <div class="newsletter-form">
+                        <input type="email" name="email"><input type="submit" value="Subscribe">
+                    </div>
                 </form>
             </div>
 
@@ -65,6 +66,5 @@
             Website by <a href="https://www.woxflow.in">woxflow</a>
         </div>
     </div>
-
 
 </footer>

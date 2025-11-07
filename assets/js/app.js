@@ -1,5 +1,10 @@
 var app = angular.module('myApp', []);
 
+app.run(function($rootScope) {
+  $rootScope.accessKey = 'd571778b-8f07-43b1-bca9-281e5e04b10e';
+});
+
+
 // Product Controller
 app.controller('ProductController', ['$scope', '$http', function ($scope, $http) {
     // Initialize data
@@ -105,4 +110,37 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+});
+
+app.run(function($rootScope) {
+  $rootScope.accessKey = '90f5647d-b4e6-4c60-97d7-ef99b1963f2b';
+});
+
+
+
+/// captcha
+document.addEventListener('DOMContentLoaded', function() {
+  const form = document.querySelector('form');
+  const captchaMessage = document.querySelector('.captcha-conformation');
+
+  // Hide captcha message initially
+  captchaMessage.style.display = 'none';
+
+  form.addEventListener('submit', function(e) {
+    const hCaptchaResponse = document.querySelector('[name="h-captcha-response"]');
+    
+    if (!hCaptchaResponse || !hCaptchaResponse.value) {
+      e.preventDefault();
+      captchaMessage.style.display = 'block';
+      return;
+    }
+    
+    // Hide message if captcha is completed
+    captchaMessage.style.display = 'none';
+    
+    // Add loading state
+    const submitBtn = form.querySelector('button[type="submit"]');
+    submitBtn.innerHTML = 'Booking...';
+    submitBtn.disabled = true;
+  });
 });

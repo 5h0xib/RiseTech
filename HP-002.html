@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html lang="en" ng-app>
+<html lang="en" ng-app="myApp">
 
 <head>
   <meta charset="utf-8">
@@ -32,7 +32,10 @@
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.3/angular.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.3/angular-route.min.js"></script>
   <script src="./assets/js/app.js"></script>
- 
+  
+  <!-- captcha -->
+  <script src="https://web3forms.com/client/script.js" async defer></script>
+
 </head>
 
 <body class="portfolio-details-page">
@@ -326,7 +329,7 @@
             </div>
           </div>
 
-          <div class="col-lg-3" data-aos="fade-up" data-aos-delay="100">
+          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
             <div class="portfolio-info">
               <h3>Product information</h3>
               <ul>
@@ -336,7 +339,7 @@
             </div>
             <div class="col-lg-100 d-flex align-items-center justify-content-center" data-aos="fade-up" data-aos-delay="200">
               <form action="https://api.web3forms.com/submit" method="post" class="align-items-center" style="width: 100%;">
-                <input type="hidden" name="access_key" value="d571778b-8f07-43b1-bca9-281e5e04b10e">
+                <input type="hidden" name="access_key" value="{{accessKey}}">
                 <input type="hidden" name="redirect" value="https://risetechglobal.com/success.html">
                 <input type="hidden" name="subject" value="HP ProBook 450 Product request">
 
@@ -346,6 +349,16 @@
                 <input name="email" type="text" placeholder="Email" class="form-control mb-3">
                 <input name="phone" type="tel" placeholder="Phone" class="form-control mb-3">
                 <button type="submit" class="btn btn-primary ">Get a Quote</button>
+
+                <div style="display: flex; justify-content: center; align-items: center;">
+                  <div class="h-captcha" data-captcha="true" style="padding: 10px; transform: translateY(20px);"></div>
+                </div>
+
+                <div class="captcha-conformation">
+                  <p style="color: #530000; text-align: center; margin-top: 10px; background-color: rgb(255, 212, 212);border-radius: 6px; border: 1px solid rgb(201, 172, 172); padding: 10px; transform: translateY(10px);">
+                    Please Complete the Captcha
+                  </p>
+                </div>
                 
               </form>
             </div>

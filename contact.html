@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app>
+<html lang="en" ng-app="myApp">
 
 <head>
   <meta charset="utf-8">
@@ -31,7 +31,10 @@
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.3/angular.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.3/angular-route.min.js"></script>
   <script src="./assets/js/app.js"></script>
- 
+  
+
+  <script src="https://web3forms.com/client/script.js" async defer></script>
+
 </head>
 
 <body class="contact-page">
@@ -298,7 +301,7 @@
 
           <div class="col-lg-8">
             <form action="https://api.web3forms.com/submit" method="post" class="php-email-form">
-              <input type="hidden" name="access_key" value="d571778b-8f07-43b1-bca9-281e5e04b10e">
+              <input type="hidden" name="access_key" value="{{accessKey}}">
               <input type="hidden" name="redirect" value="https://risetechglobal.com/success.html">
               <input type="hidden" name="subject" value="Website Contact Form Submission">
               <input type="hidden" name="title" value="Website Contact Form">
@@ -318,6 +321,16 @@
                 <textarea class="form-control" name="message" id="message" placeholder="Message" required=""></textarea>
               </div>
               <div class="text-center"><button type="submit">Send Message</button></div>
+
+              <div style="display: flex; justify-content: center; align-items: center;">
+                  <div class="h-captcha" data-captcha="true" style="padding: 10px; transform: translateY(20px);"></div>
+                </div>
+
+                <div class="captcha-conformation">
+                  <p style="color: #530000; text-align: center; margin-top: 10px; background-color: rgb(255, 212, 212);border-radius: 6px; border: 1px solid rgb(201, 172, 172); padding: 10px; transform: translateY(10px);">
+                    Please Complete the Captcha
+                  </p>
+                </div>
             </form>
           </div><!-- End Contact Form -->
 
